@@ -3,3 +3,4 @@ def func(x,y):
         return x + y
         pass
 print("hello")
+print("nice")
