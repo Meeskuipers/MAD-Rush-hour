@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Qoutes
+{% endblock %}
+
+{% block main %}
+    <form action="/qoutes" method="post">
+        A share of {{ quote[0] }} ({{ quote[1] }}) costs {{ quote[2] }}
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+    <form action="/history" methode="post">
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>shares</th>
+                    <th>price</th>
+                    <th>date and time</th>
+                </tr>
+            </thead>
+                {% for list in table %}
+                <tr>
+                    {% for thing in list %}
+                    <td>
+                            {{thing}}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+        </table>
+    </form>
+{% endblock %}
