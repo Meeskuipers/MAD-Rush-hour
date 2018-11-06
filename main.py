@@ -5,6 +5,9 @@ from cars6x6 import *
 freecoordinates = []
 occupiedcoordinates = []
 
+
+
+
 def freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor):
     for i in grid:
         if i in car1ver:
@@ -25,5 +28,10 @@ def freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,
             occupiedcoordinates.append(i)
         elif i in car5hor:
             occupiedcoordinates.append(i)
-    freecoordinates = [x for x in grid and x not in occupiedcoordinates]
+    for x in grid:
+        if x not in occupiedcoordinates:
+            freecoordinates.append(x)
+
     print (freecoordinates)
+
+freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor)
