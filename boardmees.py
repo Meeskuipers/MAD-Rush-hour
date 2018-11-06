@@ -41,8 +41,33 @@ def board (size, size_board, color):
         t.rt(90)
         t.fd(size+1)
         t.lt(90)
-    # Sluit het programma pas als er geklikt word
+    #Sluit het programma pas als er geklikt word
+    cars(size)
+
+def cars (size):
+    t.pu()
+    t.goto(-(size*4), (size*4))
+    t.color("blue")
+    t.begin_fill()
+    for i in range(2):
+        t.fd(size*2+1)
+        t.lt(90)
+        t.fd(size)
+        t.lt(90)
+    t.end_fill()
+
+    t.pu()
+    t.goto(-(size*4), (size*3 - 1))
+    t.color("red")
+    t.begin_fill()
+    for i in range(4):
+        t.fd(size)
+        t.lt(90)
+    t.end_fill()
     sc.exitonclick()
 
 
-board(50, 8, "white")
+
+
+
+board(50, 6, "white")
