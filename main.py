@@ -26,3 +26,4 @@ def freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,
         elif i in car5hor:
             occupiedcoordinates.append(i)
     freecoordinates = [x for x in grid and x not in occupiedcoordinates]
+    print (freecoordinates)
