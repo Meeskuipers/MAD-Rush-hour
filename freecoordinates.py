@@ -28,10 +28,10 @@ def occupiedfuntion():
 
 
 #this function usees the occupied coordinates to find the free coordinates
-def freefunction(grid,car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor):
+def freefunction(currentgrid):
     freecoordinates = []
     occupated = occupiedfuntion()
-    for i in grid:
+    for i in currentgridgrid:
         if i not in occupated:
             freecoordinates.append(i)
     print (freecoordinates)
