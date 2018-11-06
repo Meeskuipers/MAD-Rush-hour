@@ -1,7 +1,7 @@
 # The cars for the 6x6 grid and their starting positions
 Car1ver = [[1,3],[2,3],[3,3]]
 
-car2ver = [[1,6],[2,6][3,6]]
+car2ver = [[1,6],[2,6],[3,6]]
 
 car3ver = [[5,1],[6,1]]
 
