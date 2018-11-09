@@ -18,30 +18,76 @@ from freecoordinates import *
 #        horver = [2]
 #    carlength = len(x)
 #    if test1[1] -1 in freelist
+def check_dir(car, dir):
+    if car[0][0] == car[1][0]:
+        if dir == 'up' or 'down':
+            return False
+    else:
+        if dir == 'left' or 'right':
+            return False
+
+def check(move):
+    size_board = grid[-1][-1]
+    occupiedcoordinates = occupiedfuntion()
+    if move in occupiedcoordinates:
+        return(False)
+    for xy in move:
+        if xy > size_board or xy < 1:
+            return(False)
+    return(True)
 
 def move(car, dir):
     dir = dir.lower()
 
     if dir == 'left':
+        check_dir = check_dir(car, dir)
+        if check_dir == False:
+            print("No valid move")
+            return("No valid move")
         move = [elem[:-1] + [elem[1]-1] for elem in car]
-        print(move)
+        check_move = move[0]
+        if check(check_move):
+            print(move)
+        else:
+            print("No valid move")
 
     elif dir == 'right':
+        check_dir = check_dir(car, dir)
+        if check_dir == False:
+            print("No valid move")
+            return("No valid move")
         move = [elem[:-1] + [elem[1]+1] for elem in car]
-        if move in freecoordinates:
-            return(move)
+        check_move = move[-1]
+        if check(check_move):
+            print(move)
         else:
-            print('That is not a valid move')
+            print("No valid move")
 
     elif dir == 'down':
+        check_dir = check_dir(car, dir)
+        if check_dir == False:
+            print("No valid move")
+            return("No valid move")
         move = [[elem[0]+1] + elem[1:] for elem in car]
-        return(move)
+        check_move = move[-1]
+        if check(check_move):
+            print(move)
+        else:
+            print("No valid move")
 
     elif dir == 'up':
+        check_dir = check_dir(car, dir)
+        if check_dir == False:
+            print("No valid move")
+            return("No valid move")
         move = [[elem[0]-1] + elem[1:] for elem in car]
-        return(move)
+        check_move = move[0]
+        if check(check_move):
+            print(move)
+        else:
+            print("No valid move")
 
     else:
         print('That is not a valid direction. Try: left, right, up or down')
 
-move(car4hor, 'left')
+move(car3ver, 'down')
