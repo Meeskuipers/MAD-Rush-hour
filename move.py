@@ -1,5 +1,5 @@
 from cars6x6 import *
-#from Grid6x6 import *
+from Grid6x6 import *
 from freecoordinates import *
 
 
@@ -42,6 +42,6 @@ def move(car, dir):
         return(move)
 
     else:
-        print('That is not a valid direction, try: left, right, up or down')
+        print('That is not a valid direction. Try: left, right, up or down')
 
 move(car4hor, 'left')
