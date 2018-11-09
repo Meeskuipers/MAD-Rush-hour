@@ -1,5 +1,5 @@
 from cars6x6 import *
-from Grid6x6 import *
+#from Grid6x6 import *
 from freecoordinates import *
 
 
@@ -23,31 +23,22 @@ def move(car, dir):
     dir = dir.lower()
 
     if dir == 'left':
-        move = []
-        for elem in car:
-            elem1 = elem[:-1] + [elem[1]-1]
-            move.append(elem1)
-        return(move)
+        move = [elem[:-1] + [elem[1]-1] for elem in car]
+        print(move)
 
     elif dir == 'right':
-        move = []
-        for elem in car:
-            elem1 = elem[:-1] + [elem[1]+1]
-            move.append(elem1)
-        return(move)
+        move = [elem[:-1] + [elem[1]+1] for elem in car]
+        if move in freecoordinates:
+            return(move)
+        else:
+            print('That is not a valid move')
 
     elif dir == 'down':
-        move = []
-        for elem in car:
-            elem1 = [elem[0]+1] + elem[1:]
-            move.append(elem1)
+        move = [[elem[0]+1] + elem[1:] for elem in car]
         return(move)
 
     elif dir == 'up':
-        move = []
-        for elem in car:
-            elem1 = [elem[0]-1] + elem[1:]
-            move.append(elem1)
+        move = [[elem[0]-1] + elem[1:] for elem in car]
         return(move)
 
     else:
