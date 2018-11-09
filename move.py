@@ -23,35 +23,48 @@ def move(car, dir):
     dir = dir.lower()
 
     if dir == 'left':
-        move = []
-        for elem in car:
-            elem1 = elem[:-1] + [elem[1]-1]
-            move.append(elem1)
-        print(move)
-        return(move)
+        move = [elem[:-1] + [elem[1]-1] for elem in car]
+        check_move = move[0]
+        if check(check_move):
+            print(move)
+        else:
+            print("No valid move")
 
     elif dir == 'right':
-        move = []
-        for elem in car:
-            elem1 = elem[:-1] + [elem[1]+1]
-            move.append(elem1)
-        return(move)
+        move = [elem[:-1] + [elem[1]+1] for elem in car]
+        check_move = move[-1]
+        if check(check_move):
+            print(move)
+        else:
+            print("No valid move")
 
     elif dir == 'down':
-        move = []
-        for elem in car:
-            elem1 = [elem[0]+1] + elem[1:]
-            move.append(elem1)
-        return(move)
+        move = [[elem[0]+1] + elem[1:] for elem in car]
+        check_move = move[-1]
+        if check(check_move):
+            print(move)
+        else:
+            print("No valid move")
 
     elif dir == 'up':
-        move = []
-        for elem in car:
-            elem1 = [elem[0]-1] + elem[1:]
-            move.append(elem1)
-        return(move)
+        move = [[elem[0]-1] + elem[1:] for elem in car]
+        check_move = move[0]
+        if check(check_move):
+            print(move)
+        else:
+            print("No valid move")
 
     else:
         print('That is not a valid direction, try: left, right, up or down')
 
-move(car4hor, 'left')
+def check(move):
+    size_board = grid[-1][-1]
+    occupiedcoordinates = occupiedfuntion()
+    if move in occupiedcoordinates:
+        return(False)
+    for xy in move:
+        if xy > size_board or xy < 1:
+            return(False)
+    return(True)
+
+move(car3ver, 'down')
