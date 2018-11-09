@@ -27,6 +27,7 @@ def move(car, dir):
         for elem in car:
             elem1 = elem[:-1] + [elem[1]-1]
             move.append(elem1)
+        print(move)
         return(move)
 
     elif dir == 'right':
