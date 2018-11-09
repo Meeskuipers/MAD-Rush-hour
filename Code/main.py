@@ -8,6 +8,7 @@ occupiedcoordinates = []
 
 def ride():
     a = ['a', 'b', 'c']
+    
     print(a)
     #for elem in allcars:
         #move(elem, 'up')

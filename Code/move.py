@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 
 from cars6x6 import *
 
 #from cars6x6_start import *
 
-=======
-from cars6x6 import *
->>>>>>> c61073fac4a3d3bb7ffc0fb6a20b1b45b46d33c2
 from Grid6x6 import *
 from freecoordinates import *
 
