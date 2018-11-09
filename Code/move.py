@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from cars6x6 import *
-=======
-from cars6x6_start import *
->>>>>>> 879a2d9c0cfe71dc9d5d6345d8da18de0a834a3a
 from Grid6x6 import *
 from freecoordinates import *
 
@@ -94,17 +90,4 @@ def move(car, dir):
     else:
         print('That is not a valid direction. Try: left, right, up or down')
 
-<<<<<<< HEAD
-=======
-def check(move):
-    size_board = grid[-1][-1]
-    occupiedcoordinates = occupiedfuntion()
-    if move in occupiedcoordinates:
-        return(False)
-    for xy in move:
-        if xy > size_board or xy < 1:
-            return(False)
-    return(True)
-
->>>>>>> 4851cc52e61d40979dfe42c654140e0d2b8208b1
 move(car3ver, 'down')
