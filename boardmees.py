@@ -1,4 +1,5 @@
 import turtle
+from cars6x6_test import *
 
 sc=turtle.Screen()
 # Dit is voor de achtergrond kleur en de titel van het turtle bestand
@@ -44,30 +45,58 @@ def board (size, size_board, color):
     #Sluit het programma pas als er geklikt word
     cars(size)
 
-def cars (size):
+def cars (size, size_board):
     t.pu()
-    t.goto(-(size*4), (size*4))
-    t.color("blue")
-    t.begin_fill()
-    for i in range(2):
-        t.fd(size*2+1)
-        t.lt(90)
-        t.fd(size)
-        t.lt(90)
-    t.end_fill()
-
-    t.pu()
-    t.goto(-(size*4), (size*3 - 1))
-    t.color("red")
+    t.goto(-(size*4), (size*-1))
+    t.color("white")
     t.begin_fill()
     for i in range(4):
-        t.fd(size)
+        t.fd(size*size_board)
         t.lt(90)
     t.end_fill()
+    for car in allcars:
+        cor_1 = car[0][0]
+        cor_2 = car[1][0]
+        if cor_1 == cor_2:
+            print("Verticaal")
+            t.pu()
+            t.goto((size*cor_1), (size*(car[0][1]-1)))
+            t.color("blue")
+            t.begin_fill()
+            if len(car) == 3:
+                t.fd(size)
+                t.lt(90)
+                t.fd(size*2)
+                t.lt(90)
+                t.fd(size)
+                t.lt(90)
+                t.fd(size*3)
+                t.lt(90)
+                t.fd(size)
+                t.lt(90)
+                t.fd(size)
+                t.rt(90)
+            else:
+                for i in range(2):
+                    t.fd(size)
+                    t.lt(90)
+                    t.fd(size*2)
+                    t.lt(90)
+            t.end_fill()
+
+        else:
+            t.pu()
+            t.goto((size*(cor_1)), (size*car[0][1]))
+            t.color("yellow")
+            t.begin_fill()
+            for i in range(2):
+                t.fd(size*len(car))
+                t.lt(90)
+                t.fd(size)
+                t.lt(90)
+            t.end_fill()
+            print("Horizontaal")
+
     sc.exitonclick()
 
-
-
-
-
-board(50, 6, "white")
+cars(50, 6)
