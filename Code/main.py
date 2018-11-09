@@ -1,11 +1,16 @@
 from Grid6x6 import *
 from cars6x6 import *
+from move import *
 #The main file where the code comes together
 
 freecoordinates = []
 occupiedcoordinates = []
 
-
+def ride():
+    a = ['a', 'b', 'c']
+    print(a)
+    #for elem in allcars:
+        #move(elem, 'up')
 
 
 def freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor):
@@ -34,4 +39,5 @@ def freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,
 
     print (freecoordinates)
 
-freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor)
+#freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor)
+ride()

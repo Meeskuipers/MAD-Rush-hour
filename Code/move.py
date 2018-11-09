@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 from cars6x6 import *
-=======
-from cars6x6_start import *
->>>>>>> 879a2d9c0cfe71dc9d5d6345d8da18de0a834a3a
+
+#from cars6x6_start import *
+
 from Grid6x6 import *
 from freecoordinates import *
 
@@ -43,7 +43,7 @@ def move(car, dir):
             print("No valid move")
 
     elif dir == 'down':
-        move = [[elem[0]+1] + elem[1:] for elem in car]
+        move = [[elem[0]-1] + elem[1:] for elem in car]
         check_move = move[-1]
         if check(check_move):
             print(move)
@@ -51,7 +51,7 @@ def move(car, dir):
             print("No valid move")
 
     elif dir == 'up':
-        move = [[elem[0]-1] + elem[1:] for elem in car]
+        move = [[elem[0]+1] + elem[1:] for elem in car]
         check_move = move[0]
         if check(check_move):
             print(move)
