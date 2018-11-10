@@ -7,6 +7,7 @@ from freecoordinates import *
 
 def run(grid,allcars):
     print('welcome to this scratch version of rush hour!')
+    counter = 0
     while True:
         freecoords = freefunction(grid,allcars)
         print(allcars)
@@ -15,10 +16,14 @@ def run(grid,allcars):
         print freecoords
         inputdirection = input('in wich direction would you like to move your car:')
         direction = str(inputdirection)
+
         if move(cartomove,direction) == False
             print('invalid move or car. Select a car from the list and use directions up, down, left or right')
+            continue
         else:
-            cartomove = move(cartomove,direction)
+            move(cartomove,direction)
+
         if car2hor == [[3,5],[3,6]]:
             print('you did it!')
             break
+        counter += 1
