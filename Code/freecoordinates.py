@@ -4,7 +4,7 @@ from cars6x6 import *
 #this function returns the occupied coordinates on the board
 def occupiedfuntion(allcars):
     occupiedcoordinates = []
-    for y in allcars
+    for y in allcars:
         for i in grid:
             if i in y:
                 occupiedcoordinates.append(i)
@@ -14,8 +14,8 @@ def occupiedfuntion(allcars):
 #this function usees the occupied coordinates to find the free coordinates
 def freefunction(currentgrid,allcars):
     freecoordinates = []
-    occupated = occupiedfuntion()
-    for i in currentgridgrid:
+    occupated = occupiedfuntion(allcars)
+    for i in currentgrid:
         if i not in occupated:
             freecoordinates.append(i)
     return freecoordinates
