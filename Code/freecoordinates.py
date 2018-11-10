@@ -2,39 +2,22 @@ from Grid6x6 import *
 from cars6x6 import *
 
 #this function returns the occupied coordinates on the board
-def occupiedfuntion():
+def occupiedfuntion(allcars):
     occupiedcoordinates = []
-    for i in grid:
-        if i in car1ver:
-            occupiedcoordinates.append(i)
-        elif i in car2ver:
-            occupiedcoordinates.append(i)
-        elif i in car3ver:
-            occupiedcoordinates.append(i)
-        elif i in car4ver:
-            occupiedcoordinates.append(i)
-        elif i in car1hor:
-            occupiedcoordinates.append(i)
-        elif i in car2hor:
-            occupiedcoordinates.append(i)
-        elif i in car3hor:
-            occupiedcoordinates.append(i)
-        elif i in car4hor:
-            occupiedcoordinates.append(i)
-        elif i in car5hor:
-            occupiedcoordinates.append(i)
-
+    for y in allcars
+        for i in grid:
+            if i in y:
+                occupiedcoordinates.append(i)
     return occupiedcoordinates
 
 
 #this function usees the occupied coordinates to find the free coordinates
-def freefunction(currentgrid):
+def freefunction(currentgrid,allcars):
     freecoordinates = []
     occupated = occupiedfuntion()
     for i in currentgridgrid:
         if i not in occupated:
             freecoordinates.append(i)
-    print (freecoordinates)
     return freecoordinates
 
 #test function below
