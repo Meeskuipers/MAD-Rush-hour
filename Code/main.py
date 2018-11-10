@@ -11,7 +11,6 @@ def run(grid,allcars):
     while True:
         freecoords = freefunction(grid,allcars)
         print(allcars)
-        print('select a car you want to move')
         cartomove = input('select a car you want to move:')
         print (freecoords)
         inputdirection = input('in wich direction would you like to move your car:')
