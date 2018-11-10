@@ -9,7 +9,7 @@ sc.title("MAD Rush-hour")
 # Turtle moet voor elk beweging aangeroepen worden dus heb het afgekort naar t
 t=turtle.Turtle()
 # Snelheid 0 is het snelst, maar zou eigenlijk sneller kunnen
-t.speed(0)
+t.speed(1)
 t.pencolor("white")
 
 # square tekent elke square
