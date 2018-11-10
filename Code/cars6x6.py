@@ -16,5 +16,3 @@ car3hor = [[4,5],[4,6]]
 car4hor = [[5,2],[5,3]]
 
 car5hor = [[6,5],[6,6]]
-
-allcars = [car1ver, car2ver, car3ver, car4ver, car1hor, car2hor, car3hor, car4hor, car5hor]

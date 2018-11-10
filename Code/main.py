@@ -18,7 +18,7 @@ def run(grid,allcars):
 
         if move(cartomove,direction) == False:
             print('invalid move or car. Select a car from the list and use directions up, down, left or right')
-
+            continue
         else:
             move(cartomove,direction)
 
@@ -26,5 +26,6 @@ def run(grid,allcars):
             print('you did it!')
             break
         counter += 1
+    print('it took you' + counter + 'moves to complete the board!')
 
 run(grid,allcars)
