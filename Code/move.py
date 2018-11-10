@@ -19,7 +19,7 @@ def check_dir(car, dir):
 
 def check(move):
     size_board = grid[-1][-1]
-    occupiedcoordinates = occupiedfuntion()
+    occupiedcoordinates = occupiedfuntion(allcars)
     if move in occupiedcoordinates:
         return(False)
     for xy in move:
@@ -34,49 +34,57 @@ def move(car, dir):
         check_dir = check_dir(car, dir)
         if check_dir == False:
             print("No valid move")
-            return("No valid move")
+            return False
         move = [elem[:-1] + [elem[1]-1] for elem in car]
         check_move = move[0]
+        return car
         if check(check_move):
             print(move)
         else:
             print("No valid move")
+            return False
 
     elif dir == 'right':
         check_dir = check_dir(car, dir)
         if check_dir == False:
             print("No valid move")
-            return("No valid move")
+            return False
         move = [elem[:-1] + [elem[1]+1] for elem in car]
         check_move = move[-1]
+        return car
         if check(check_move):
             print(move)
         else:
             print("No valid move")
+            return False
 
     elif dir == 'down':
         check_dir = check_dir(car, dir)
         if check_dir == False:
             print("No valid move")
-            return("No valid move")
+            return False
         move = [[elem[0]+1] + elem[1:] for elem in car]
         check_move = move[-1]
+        return car
         if check(check_move):
             print(move)
         else:
             print("No valid move")
+            return('False')
 
     elif dir == 'up':
         check_dir = check_dir(car, dir)
         if check_dir == False:
             print("No valid move")
-            return("No valid move")
+            return False
         move = [[elem[0]-1] + elem[1:] for elem in car]
         check_move = move[0]
+        return car
         if check(check_move):
             print(move)
         else:
             print("No valid move")
+            return('False')
 
     else:
         print('That is not a valid direction. Try: left, right, up or down')

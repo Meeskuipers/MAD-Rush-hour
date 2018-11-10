@@ -1,44 +1,24 @@
 from Grid6x6 import *
 from cars6x6 import *
 from move import *
+from freecoordinates import *
+
 #The main file where the code comes together
 
-freecoordinates = []
-occupiedcoordinates = []
-
-def ride():
-    a = ['a', 'b', 'c']
-    
-    print(a)
-    #for elem in allcars:
-        #move(elem, 'up')
-
-
-def freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor):
-    for i in grid:
-        if i in car1ver:
-            occupiedcoordinates.append(i)
-        elif i in car2ver:
-            occupiedcoordinates.append(i)
-        elif i in car3ver:
-            occupiedcoordinates.append(i)
-        elif i in car4ver:
-            occupiedcoordinates.append(i)
-        elif i in car1hor:
-            occupiedcoordinates.append(i)
-        elif i in car2hor:
-            occupiedcoordinates.append(i)
-        elif i in car3hor:
-            occupiedcoordinates.append(i)
-        elif i in car4hor:
-            occupiedcoordinates.append(i)
-        elif i in car5hor:
-            occupiedcoordinates.append(i)
-    for x in grid:
-        if x not in occupiedcoordinates:
-            freecoordinates.append(x)
-
-    print (freecoordinates)
-
-#freecoord(grid, car1ver, car2ver, car3ver,car4ver,car1hor, car2hor, car3hor,car4hor,car5hor)
-ride()
+def run(grid,allcars):
+    print('welcome to this scratch version of rush hour!')
+    while True:
+        freecoords = freefunction(grid,allcars)
+        print(allcars)
+        print('select a car you want to move')
+        cartomove = input('select a car you want to move:')
+        print freecoords
+        inputdirection = input('in wich direction would you like to move your car:')
+        direction = str(inputdirection)
+        if move(cartomove,direction) == False
+            print('invalid move or car. Select a car from the list and use directions up, down, left or right')
+        else:
+            cartomove = move(cartomove,direction)
+        if car2hor == [[3,5],[3,6]]:
+            print('you did it!')
+            break
