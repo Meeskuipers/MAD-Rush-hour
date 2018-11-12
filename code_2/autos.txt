@@ -40,5 +40,5 @@ CAR
 
 9
 HORIZONTAAL
-[5,4][5,5
+[5,4][5,5]
 CAR

@@ -6,4 +6,4 @@ class Auto(object):
         self.type =  type
 
     def __str__(self):
-        return f"{self.id}{self.start_position}{self.direction}{self.type}\n"
+        return f"{self.id}\n{self.start_position}{self.direction}{self.type}\n"
