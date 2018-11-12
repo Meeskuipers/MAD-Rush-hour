@@ -12,6 +12,7 @@ def run(grid,allcars):
         freecoords = freefunction(grid,allcars)
         print(allcars)
         cartomove = input('select a car you want to move:')
+        print(freecoords)
         print (freecoords)
         inputdirection = input('in wich direction would you like to move your car:')
         direction = str(inputdirection)

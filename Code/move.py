@@ -29,14 +29,12 @@ def check(move):
 
 def move(car, dir):
     dir = dir.lower()
-
     if dir == 'left':
         if not check_dir(car,dir) :
             print("No valid move")
             return False
         move = [elem[:-1] + [elem[1]-1] for elem in car]
         check_move = move[0]
-        return car
         if check(check_move):
             print(move)
         else:
@@ -50,7 +48,6 @@ def move(car, dir):
             return False
         move = [elem[:-1] + [elem[1]+1] for elem in car]
         check_move = move[-1]
-        return car
         if check(check_move):
             print(move)
         else:
@@ -63,12 +60,11 @@ def move(car, dir):
             return False
         move = [[elem[0]+1] + elem[1:] for elem in car]
         check_move = move[-1]
-        return car
         if check(check_move):
             print(move)
         else:
             print("No valid move")
-            return('False')
+            return False
 
     elif dir == 'up':
         if not check_dir(car,dir):
@@ -76,14 +72,13 @@ def move(car, dir):
             return False
         move = [[elem[0]-1] + elem[1:] for elem in car]
         check_move = move[0]
-        return car
         if check(check_move):
             print(move)
         else:
             print("No valid move")
-            return('False')
+            return False
 
     else:
         print('That is not a valid direction. Try: left, right, up or down')
 
-move(car5hor,'left')
+move(car1ver,'down')
