@@ -8,10 +8,11 @@ class Grid():
 
     def load_grid(self):
         gridsize = 6
-        grid = [[0] * gridsize for i in range(gridsize)]
-        print(grid)
+        self.grid = [[0] * gridsize for i in range(gridsize)]
+        return(self.grid)
 
     def add_cars(self):
-        print()
+        self.grid[0][0] = 'car'
+        print(self.grid)
 
 Grid()
