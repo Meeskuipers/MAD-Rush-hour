@@ -3,7 +3,6 @@ from class_auto import Auto
 class Main():
     def __init__(self):
         self.cars = self.load_cars("autos.txt")
-        print('dit zou het moeten doen')
         self.grid = ''
 
     def run(self, grid, ):
