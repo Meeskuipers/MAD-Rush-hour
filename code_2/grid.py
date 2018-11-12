@@ -1,15 +1,17 @@
+#from class_auto import Auto
+#from main import Main
+
 class Grid():
     def __init__(self):
         self.grid = self.load_grid()
+        self.car = self.add_cars()
 
     def load_grid(self):
         gridsize = 6
-        grid = []
-        row = []
-        for i in range(gridsize):
-            row.append([])
-        for i in range(gridsize):
-            grid.append(row)
+        grid = [[0] * gridsize for i in range(gridsize)]
         print(grid)
-Main = Grid()
-Main.load_grid()
+
+    def add_cars(self):
+        print()
+
+Grid()
