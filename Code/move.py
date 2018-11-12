@@ -68,31 +68,30 @@ def move(car, dir):
             print("No valid move")
 
     elif dir == 'down':
-<<<<<<< HEAD
+
         move = [[elem[0]-1] + elem[1:] for elem in car]
-=======
+        check_dir = True
         check_dir = check_dir(car, dir)
         if check_dir == False:
             print("No valid move")
             return("No valid move")
         move = [[elem[0]+1] + elem[1:] for elem in car]
->>>>>>> c61073fac4a3d3bb7ffc0fb6a20b1b45b46d33c2
         check_move = move[-1]
+
         if check(check_move):
             print(move)
         else:
             print("No valid move")
 
     elif dir == 'up':
-<<<<<<< HEAD
         move = [[elem[0]+1] + elem[1:] for elem in car]
-=======
+
         check_dir = check_dir(car, dir)
         if check_dir == False:
             print("No valid move")
             return("No valid move")
         move = [[elem[0]-1] + elem[1:] for elem in car]
->>>>>>> c61073fac4a3d3bb7ffc0fb6a20b1b45b46d33c2
+
         check_move = move[0]
         if check(check_move):
             print(move)
