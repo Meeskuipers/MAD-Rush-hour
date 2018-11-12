@@ -1,4 +1,4 @@
-class Move():
+class Grid():
     def __init__(self):
         print('dit zou het moeten doen')
 
