@@ -11,9 +11,9 @@ def run(grid,allcars):
     while True:
         freecoords = freefunction(grid,allcars)
         print(allcars)
-        print('select a car you want to move')
         cartomove = input('select a car you want to move:')
         print(freecoords)
+        print (freecoords)
         inputdirection = input('in wich direction would you like to move your car:')
         direction = str(inputdirection)
 
@@ -27,3 +27,6 @@ def run(grid,allcars):
             print('you did it!')
             break
         counter += 1
+    print('it took you' + counter + 'moves to complete the board!')
+
+run(grid,allcars)
