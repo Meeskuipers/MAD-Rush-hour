@@ -13,11 +13,11 @@ def run(grid,allcars):
         print(allcars)
         print('select a car you want to move')
         cartomove = input('select a car you want to move:')
-        print freecoords
+        print(freecoords)
         inputdirection = input('in wich direction would you like to move your car:')
         direction = str(inputdirection)
 
-        if move(cartomove,direction) == False
+        if move(cartomove,direction) == False:
             print('invalid move or car. Select a car from the list and use directions up, down, left or right')
             continue
         else:
