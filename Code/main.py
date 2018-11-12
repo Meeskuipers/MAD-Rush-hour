@@ -13,7 +13,6 @@ def run(grid,allcars):
         print(allcars)
         cartomove = input('select a car you want to move:')
         print(freecoords)
-        print (freecoords)
         inputdirection = input('in wich direction would you like to move your car:')
         direction = str(inputdirection)
 
@@ -21,12 +20,9 @@ def run(grid,allcars):
             print('invalid move or car. Select a car from the list and use directions up, down, left or right')
             continue
         else:
-            move(cartomove,direction)
-
+             newpostion = move(cartomove,direction)
         if car2hor == [[3,5],[3,6]]:
             print('you did it!')
             break
         counter += 1
     print('it took you' + counter + 'moves to complete the board!')
-
-run(grid,allcars)
