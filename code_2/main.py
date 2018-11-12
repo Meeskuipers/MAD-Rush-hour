@@ -1,10 +1,11 @@
 from class_auto import Auto
+#from grid import Grid
 from types import *
 
 class Main():
     def __init__(self):
         self.cars = self.load_cars("autos.txt")
-        self.grid = ''
+        #sself.grid = self.add_cars()
 
     def run(self, grid, ):
         print('deze ook')
@@ -33,6 +34,11 @@ class Main():
                     self.all_cars.append(auto)
             print(self.all_cars[0].start_position)
 
+    # def add_cars(self):
+    #     print(self.all_cars[0].id)
+    #     for car in self.all_cars:
+    #         Grid(car.id, car.start_position)
+    #         #self.self.all_cars[id].inventory.add(one_item)
 
 
 Main = Main()
