@@ -1,2 +1,2 @@
-import sys
-print(sys.version)
+from grid import *
+print(self.grid)
