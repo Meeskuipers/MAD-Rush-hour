@@ -1,1 +1,2 @@
-nice
+import sys
+print(sys.version)
