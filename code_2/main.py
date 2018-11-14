@@ -59,7 +59,7 @@ class Main():
                 print(number, end=" ")
             print()
         while not self.won():
-            command = input("> ").upper().split()
+            command = input("> ").upper().split(',')
             move = self.move(command)
             if not move:
                 print("Invalid move")

@@ -9,22 +9,30 @@ class Auto(object):
         if direction == 'LEFT':
             if self.direction == "VERTICAAL":
                 return False
-            
-            return True
+            else:
+                position = [[elem[0],int(elem[1])-1] for elem in self.position]
+                print(position)
+                return True
         elif direction == 'RIGHT':
             if self.direction == "VERTICAAL":
                 return False
-            return True
+            else:
+                position = [[elem[0],int(elem[1])+1] for elem in self.position]
+                return True
 
         elif direction == 'UP':
             if self.direction == "HORIZONTAAL":
                 return False
-            return True
+            else:
+                position = [[int(elem[0])-1,elem[1]] for elem in self.position]
+                return True
 
         elif direction == 'DOWN':
             if self.direction == "HORIZONTAAL":
                 return False
-            return True
+            else:
+                position = [[int(elem[0])+1,elem[1]] for elem in self.position]
+                return True
         else:
             return False
 
