@@ -1,6 +1,6 @@
-from class_auto import Auto
+#from class_auto import Auto
 
-from main import *
+#from main import *
 
 class Grid():
     def __init__(self, car_id, car_start_position):
