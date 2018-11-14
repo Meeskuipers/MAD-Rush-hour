@@ -31,7 +31,7 @@ class Main():
                     type = line
                     auto = Auto(id, direction, start_position, type)
                     self.all_cars.append(auto)
-            print(self.all_cars[0].start_position)
+            print(self.all_cars)
 
 
 

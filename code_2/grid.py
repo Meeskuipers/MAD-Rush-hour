@@ -1,8 +1,8 @@
-#from class_auto import Auto
-#from main import Main
+from class_auto import Auto
+from main import Main
 
 class Grid():
-    def __init__(self):
+    def __init__(self, car_id, car_start_position):
         self.grid = self.load_grid()
         self.car = self.add_cars()
 
@@ -11,8 +11,8 @@ class Grid():
         self.grid = [[0] * gridsize for i in range(gridsize)]
         return(self.grid)
 
-    def add_cars(self):
-        self.grid[0][0] = 'car'
+    def add_cars(self, car_id, car_start_position):
+        self.grid[car_start_position][car_start_position] = car_id
         print(self.grid)
 
 Grid()
