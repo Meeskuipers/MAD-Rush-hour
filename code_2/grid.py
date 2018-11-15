@@ -31,5 +31,7 @@ class Grid(object):
             cor_2 = int(len[1])
             self.grid[cor_1][cor_2] = car_id
 
+
+
     def __str__(self):
         return(self.grid)
