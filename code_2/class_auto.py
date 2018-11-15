@@ -20,21 +20,21 @@ class Auto(object):
             if self.direction == "VERTICAAL":
                 return False
             else:
-                position = [[elem[0],int(elem[1])+1] for elem in self.position]
+                self.position = [[elem[0],int(elem[1])+1] for elem in self.position]
                 return True
 
         elif direction == 'UP':
             if self.direction == "HORIZONTAAL":
                 return False
             else:
-                position = [[int(elem[0])-1,elem[1]] for elem in self.position]
+                self.position = [[int(elem[0])-1,elem[1]] for elem in self.position]
                 return True
 
         elif direction == 'DOWN':
             if self.direction == "HORIZONTAAL":
                 return False
             else:
-                position = [[int(elem[0])+1,elem[1]] for elem in self.position]
+                self.position = [[int(elem[0])+1,elem[1]] for elem in self.position]
                 return True
         else:
             return False
