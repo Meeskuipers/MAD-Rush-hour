@@ -63,9 +63,20 @@ class Main():
             move = self.move(command)
             if not move:
                 print("Invalid move")
+            else:
+                self.grid = self.load_grid()
+                for car in self.all_cars:
+                    Grid(self.grid, car.id, car.position)
+                for row in self.grid:
+                    for number in row:
+                        print("", end=" ")
+                        print(number, end=" ")
+                    print()
+        print("You won!!!")
 
     def move(self, command):
         if len(command) != 2:
+            print("huh")
             return(False)
         car = int(command[0])
         direction = command[1]
