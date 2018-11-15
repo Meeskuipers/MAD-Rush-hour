@@ -69,8 +69,10 @@ class Main():
             return(False)
         car = int(command[0])
         direction = command[1]
-        return(self.all_cars[car-1].move_car(direction))
+        return(self.all_cars[car-1].move_car(direction, self.grid))
 
+    def freecoordinates(self, coordinate):
+        occupied = [elem for elem in self.grid]
 
 
 if __name__ == "__main__":

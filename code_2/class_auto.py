@@ -1,3 +1,4 @@
+
 class Auto(object):
     def __init__(self, id, direction, position, type):
         self.id = id
@@ -5,14 +6,16 @@ class Auto(object):
         self.position = position
         self.type =  type
 
-    def move_car(self, direction):
+    def move_car(self, direction, grid):
         if direction == 'LEFT':
             if self.direction == "VERTICAAL":
                 return False
             else:
                 position = [[elem[0],int(elem[1])-1] for elem in self.position]
-                print(position)
-                return True
+                if self.check_move(direction, grid, position):
+                    return True
+                else:
+                    return False
         elif direction == 'RIGHT':
             if self.direction == "VERTICAAL":
                 return False
@@ -35,6 +38,13 @@ class Auto(object):
                 return True
         else:
             return False
+
+    def check_move(self, direction, grid, position):
+        if direction == 'LEFT':
+            if grid[int(position[0][0])][int(position[0][1])] == 0:
+                return(True)
+            else:
+                return(False)
 
     def __str__(self):
         return f"{self.id}\n{self.position}\n{self.direction}{self.type}\n"
