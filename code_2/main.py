@@ -55,22 +55,22 @@ class Main():
             #Door deze while loop blijft de grid uitgeprint worden nadat er een move is gedaan
             #Hij stopt pas als de 'won' functie true returnt
             while not self.won():
-            command = input("> ").upper().split(',')
-            move = self.move(command)
-            if not move:
-                print("Invalid move")
-            else:
-                self.grid = self.load_grid()
-                for car in self.all_cars:
-                    Grid(self.grid, car.id, car.position)
-                for row in self.grid:
-                    for number in row:
-                        print("", end=" ")
-                        print(number, end=" ")
-                    print()
-        print("You won!!!")
+                command = input("> ").upper().split(',')
+                move = self.move(command)
+                if not move:
+                    print("Invalid move")
+                else:
+                    self.grid = self.load_grid()
+                    for car in self.all_cars:
+                        Grid(self.grid, car.id, car.position)
+                    for row in self.grid:
+                        for number in row:
+                            print("", end=" ")
+                            print(number, end=" ")
+                        print()
+            print("You won!!!")
     #Deze functie wordt aangeroepen om een move te maken.
-    #Een move heeft 2 inputs nodig: de direction en car_id   
+    #Een move heeft 2 inputs nodig: de direction en car_id
     def move(self, command):
         if len(command) != 2:
             print("huh")
