@@ -107,7 +107,7 @@ class Main():
                 print()
         print("it took ")
         print(counter)
-        print("moves to win")
+        print("moves to win (for the computer, you're an idiot who chose solve)")
 
 
     def possiblemoves(self):
