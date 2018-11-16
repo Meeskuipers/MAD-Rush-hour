@@ -2,7 +2,6 @@
 
 #from main import *
 
-<<<<<<< HEAD
 # class Grid():
 #     def __init__(self, car_id, car_start_position):
 #         self.grid = self.load_grid()
@@ -18,8 +17,6 @@
 #         print(self.grid)
 
 
-=======
->>>>>>> 0f317be159b3f81ddfd7b63f3e7d98520e984667
 class Grid(object):
     def __init__(self, grid, car_id, car_start_position):
         self.grid = grid

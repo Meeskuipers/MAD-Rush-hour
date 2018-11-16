@@ -8,14 +8,15 @@ class Main():
         self.grid = self.load_grid()
         self.grid = self.add_cars()
 
-    def run(self, grid, ):
-        print('deze ook')
-
+    #Maakt de grid aan door middel van list comprehension.
+    #Het vult de grid oorspronkelijk met nullen,
+    #dit staat dan tevens voor een lege plek in de grid
     def load_grid(self):
         gridsize = 6
         self.grid = [[0] * gridsize for i in range(gridsize)]
         return(self.grid)
 
+        
     def load_cars(self, filename):
         with open(filename, "r") as file_cars:
             self.all_cars = []
@@ -43,7 +44,6 @@ class Main():
         for car in self.all_cars:
             Grid(self.grid, car.id, car.position)
         return(self.grid)
-            #self.all_cars[id].inventory.add(one_item)
 
     def won(self):
         if self.grid[2][5] == '6':
@@ -81,9 +81,6 @@ class Main():
         car = int(command[0])
         direction = command[1]
         return(self.all_cars[car-1].move_car(direction, self.grid))
-
-    def freecoordinates(self, coordinate):
-        occupied = [elem for elem in self.grid]
 
 
 if __name__ == "__main__":
