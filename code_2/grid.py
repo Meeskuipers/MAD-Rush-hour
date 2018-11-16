@@ -6,13 +6,12 @@ class Grid(object):
         self.car_id = car_id
         self.car_start_position = car_start_position
 
+    # Voegt de auto's toe aan de grid
     def add_cars(self, car_start_position, car_id):
         for len in car_start_position:
             cor_1 = int(len[0])
             cor_2 = int(len[1])
             self.grid[cor_1][cor_2] = car_id
-
-
 
     def __str__(self):
         return(self.grid)
