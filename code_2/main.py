@@ -70,7 +70,7 @@ class Main():
                     print()
         print("You won!!!")
     #Deze functie wordt aangeroepen om een move te maken.
-    #Een move heeft 2 inputs nodig: de direction en car_id   
+    #Een move heeft 2 inputs nodig: de direction en car_id
     def move(self, command):
         if len(command) != 2:
             print("huh")
@@ -79,7 +79,39 @@ class Main():
         direction = command[1]
         return(self.all_cars[car-1].move_car(direction, self.grid))
 
+    def dumbsolver(self):
+        while not self.won():
+            possiblemoves = []
+            possiblemoves = possiblemoves()
 
+
+    def possiblemoves(self):
+        moveList = []
+        for i in self.allcars:
+            movesCar = calculatemove(i)
+            for x in movesCar:
+                moveList.append(x)
+        return moveList
+
+    def calculatemove(self, car):
+        movelist = []
+        freelist = freelist()
+        if car.direction == 'VERTICAAL':
+            if [car.position[0][0],car.position[0][1]-1] in freelist:
+                movelist.append([car,'LEFT'])
+
+            if [car.position[0][0],car.position[-1][1]+1] in freelist:
+                movelist.append([car,'RIGHT'])
+
+        elif car.direction == 'HORIZONTAAL':
+            if [car.position[0][0]-1,car.position[0][1]] in freelist:
+                movelist.append([car,'UP'])
+            if [car.position[-1][0]+1,car.position[0][1]] in freelist:
+                movelist.append([car,'DOWN'])
+                
+        return movelist
+
+    def freelist
 if __name__ == "__main__":
     main = Main()
     main.play()
