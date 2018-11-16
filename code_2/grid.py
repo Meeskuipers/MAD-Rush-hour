@@ -1,32 +1,10 @@
-#from class_auto import Auto
-
-#from main import *
-
-<<<<<<< HEAD
-# class Grid():
-#     def __init__(self, car_id, car_start_position):
-#         self.grid = self.load_grid()
-#         self.car = self.add_cars()
-#
-#     def load_grid(self):
-#         gridsize = 6
-#         self.grid = [[0] * gridsize for i in range(gridsize)]
-#         return(self.grid)
-#
-#     def add_cars(self, car_id, car_start_position):
-#         self.grid[car_start_position][car_start_position] = car_id
-#         print(self.grid)
-
-
-=======
->>>>>>> 0f317be159b3f81ddfd7b63f3e7d98520e984667
+# Deze class definieerd de grid en implementeerd de auto's
 class Grid(object):
     def __init__(self, grid, car_id, car_start_position):
         self.grid = grid
         self.car = self.add_cars(car_start_position, car_id)
         self.car_id = car_id
         self.car_start_position = car_start_position
-        self.car_position = car_start_position
 
     def add_cars(self, car_start_position, car_id):
         for len in car_start_position:
@@ -38,19 +16,3 @@ class Grid(object):
 
     def __str__(self):
         return(self.grid)
-
-
-
-# class Grid():
-#     def __init__(self, car_id, car_start_position):
-#         self.grid = self.load_grid()
-#         self.car = self.add_cars()
-#
-#     def load_grid(self):
-#         gridsize = 6
-#         self.grid = [[0] * gridsize for i in range(gridsize)]
-#         return(self.grid)
-#
-#     def add_cars(self, car_id, car_start_position):
-#         self.grid[car_start_position][car_start_position] = car_id
-#         print(self.grid)

@@ -11,8 +11,8 @@ class Auto(object):
             if self.direction == "VERTICAAL":
                 return False
             else:
-                position = [[elem[0],int(elem[1])-1] for elem in self.position]
-                if self.check_move(direction, grid, position):
+                self.position = [[elem[0],int(elem[1])-1] for elem in self.position]
+                if self.check_move(direction, grid, self.position):
                     return True
                 else:
                     return False
