@@ -12,7 +12,7 @@ class Auto(object):
                 return False
             else:
                 self.position = [[elem[0],int(elem[1])-1] for elem in self.position]
-                if self.check_move(direction, grid, position):
+                if self.check_move(direction, grid, self.position):
                     return True
                 else:
                     return False
