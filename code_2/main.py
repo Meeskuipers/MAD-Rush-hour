@@ -1,6 +1,7 @@
 from class_auto import Auto
 from grid import Grid
 from types import *
+from random import *
 
 class Main():
     def __init__(self):
@@ -44,6 +45,13 @@ class Main():
         if self.grid[2][5] == '6':
             return(True)
 
+    def menu(self):
+        choice = input("hi! if you would to play type play. if you're an idiot, type solve!").lower()
+        if choice == 'play':
+            self.play()
+        elif choice == 'solve':
+            self.dumbsolver()
+
     def play(self):
         print("Heee let's play!!!")
         #Deze for loop print de grid op een elegante manier.
@@ -54,20 +62,17 @@ class Main():
             print()
             #Door deze while loop blijft de grid uitgeprint worden nadat er een move is gedaan
             #Hij stopt pas als de 'won' functie true returnt
-            while not self.won():
+        while not self.won():
             command = input("> ").upper().split(',')
-            move = self.move(command)
-            if not move:
-                print("Invalid move")
-            else:
-                self.grid = self.load_grid()
-                for car in self.all_cars:
-                    Grid(self.grid, car.id, car.position)
-                for row in self.grid:
-                    for number in row:
-                        print("", end=" ")
-                        print(number, end=" ")
-                    print()
+            self.move(command)
+            self.grid = self.load_grid()
+            for car in self.all_cars:
+                Grid(self.grid, car.id, car.position)
+            for row in self.grid:
+                for number in row:
+                    print("", end=" ")
+                    print(number, end=" ")
+                print()
         print("You won!!!")
     #Deze functie wordt aangeroepen om een move te maken.
     #Een move heeft 2 inputs nodig: de direction en car_id
@@ -77,41 +82,75 @@ class Main():
             return(False)
         car = int(command[0])
         direction = command[1]
-        return(self.all_cars[car-1].move_car(direction, self.grid))
+        return(self.all_cars[car-1].move_car(direction))
 
     def dumbsolver(self):
+        counter = 0
         while not self.won():
             possiblemoves = []
-            possiblemoves = possiblemoves()
+            possiblemoves = self.possiblemoves()
+            print(possiblemoves)
+            if ['6','RIGHT'] in possiblemoves and self.all_cars[5].position == [[2,3],[2,4]]:
+                self.move([['6','RIGHT']])
+            else:
+                randommove = randint(0,len(possiblemoves)-1)
+                print([possiblemoves[randommove][0],possiblemoves[randommove][1]])
+                self.move([possiblemoves[randommove][0],possiblemoves[randommove][1]])
+            counter += 1
+            self.grid = self.load_grid()
+            for car in self.all_cars:
+                Grid(self.grid, car.id, car.position)
+            for row in self.grid:
+                for number in row:
+                    print("", end=" ")
+                    print(number, end=" ")
+                print()
+        print("it took ")
+        print(counter)
+        print("moves to win")
 
 
     def possiblemoves(self):
         moveList = []
-        for i in self.allcars:
-            movesCar = calculatemove(i)
+        freelist = self.freelist()
+        for i in self.all_cars:
+            movesCar = self.calculatemove(i,freelist)
             for x in movesCar:
                 moveList.append(x)
         return moveList
 
-    def calculatemove(self, car):
+    def calculatemove(self, car,freelist):
         movelist = []
-        freelist = freelist()
-        if car.direction == 'VERTICAAL':
-            if [car.position[0][0],car.position[0][1]-1] in freelist:
-                movelist.append([car,'LEFT'])
+        if car.direction == 'HORIZONTAAL':
 
-            if [car.position[0][0],car.position[-1][1]+1] in freelist:
-                movelist.append([car,'RIGHT'])
+            if [int(car.position[0][0]),int(car.position[0][1])-1] in freelist:
+                movelist.append([car.id,'LEFT'])
 
-        elif car.direction == 'HORIZONTAAL':
-            if [car.position[0][0]-1,car.position[0][1]] in freelist:
-                movelist.append([car,'UP'])
-            if [car.position[-1][0]+1,car.position[0][1]] in freelist:
-                movelist.append([car,'DOWN'])
-                
+            if [int(car.position[0][0]),int(car.position[-1][1])+1] in freelist:
+                movelist.append([car.id,'RIGHT'])
+
+        elif car.direction == 'VERTICAAL':
+
+            if [int(car.position[0][0])-1,int(car.position[0][1])] in freelist:
+                movelist.append([car.id,'UP'])
+
+            if [int(car.position[-1][0])+1,int(car.position[0][1])] in freelist:
+                movelist.append([car.id,'DOWN'])
+
         return movelist
 
-    def freelist
+    def freelist(self):
+        freelist = []
+        ycounter = 0
+        for row in self.grid:
+            xcounter = 0
+            for x in row:
+                if x == 0:
+                    freelist.append([ycounter,xcounter])
+                xcounter += 1
+            ycounter += 1
+        return freelist
+
 if __name__ == "__main__":
     main = Main()
-    main.play()
+    main.menu()
