@@ -106,10 +106,7 @@ class Main():
                     print("", end=" ")
                     print(number, end=" ")
                 print()
-        print("it took ")
-        print(counter)
-        print("moves to win (for the computer, you're an idiot who chose solve)")
-
+        print("it took "+str(counter)+" moves to win (for the computer, you're an idiot who chose solve)")
 
     def possiblemoves(self):
         moveList = []
@@ -154,4 +151,4 @@ class Main():
 
 if __name__ == "__main__":
     main = Main()
-    main.dumbsolver()
+    main.menu()
