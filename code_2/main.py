@@ -93,7 +93,12 @@ class Main():
             print(self.all_cars[5].position)
             if ['6','RIGHT'] in possiblemoves and self.all_cars[5].position == [['2',3],['2',4]]:
                 self.move(['6','RIGHT'])
+            elif self.grid[2][4] == self.grid[2][5] and self.all_cars[5].position == [['2',2],['2',3]]:
+                self.move(['6',"RIGHT"])
+            elif self.grid[2][3] == self.grid[2][4] == self.grid[2][5] and self.all_cars[5].position == [['2',1],['2',2]]:
+                self.move(['6',"RIGHT"])
             else:
+                print(self.grid[2][(self.grid[2].index("6")+2):])
                 randommove = randint(0,len(possiblemoves)-1)
                 print([possiblemoves[randommove][0],possiblemoves[randommove][1]])
                 self.move([possiblemoves[randommove][0],possiblemoves[randommove][1]])
