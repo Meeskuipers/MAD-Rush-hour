@@ -29,10 +29,8 @@ def move(grid,command):
 
 
 def won(grid):
-    if grid.grid[2][5] == '2':
-        return True
-    else:
-        return False
+    if grid.grid[2][5] == '6':
+        return(True)
 
 def printgrid(grid):
     for row in grid.grid:
@@ -40,5 +38,3 @@ def printgrid(grid):
             print("", end=" ")
             print(number, end=" ")
         print()
-
-play(6)

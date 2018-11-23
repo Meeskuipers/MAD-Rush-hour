@@ -16,10 +16,10 @@ class Grid(object):
         ''' docstring placeholder '''
         with open(filename, "r") as file_cars:
             self.all_cars = []
-            for line in file_cars:s
+            for line in file_cars:
                 line = line.strip()
                 if line.isdigit():
-                    id = line.strip()
+                    id = int(line.strip())
                     line = file_cars.readline()
                     direction = line.strip()
                     line = file_cars.readline().split()

@@ -3,7 +3,7 @@ from grid import Grid
 from possiblemoves import *
 from types import *
 from random import *
-
+from dumbsolver import dumbsolver
 
 def main():
     ''' docstring placeholder
