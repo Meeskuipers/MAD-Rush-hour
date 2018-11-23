@@ -4,10 +4,10 @@ from class_auto import Auto
 class Grid(object):
 
     def __init__(self,size):
+        self.load_cars('autos.txt')
         self.size = size
-        self.all_cars = self.load_cars('autos.txt')
-        self.grid = self.load_grid()
-        self.grid = self.add_cars()
+        self.load_grid()
+        self.add_cars()
 
     def load_grid(self):
         self.grid = [[0] * self.size for i in range(self.size)]
@@ -16,7 +16,7 @@ class Grid(object):
         ''' docstring placeholder '''
         with open(filename, "r") as file_cars:
             self.all_cars = []
-            for line in file_cars:
+            for line in file_cars:s
                 line = line.strip()
                 if line.isdigit():
                     id = line.strip()
@@ -34,10 +34,8 @@ class Grid(object):
             for len in car.position:
                     cor_1 = int(len[0])
                     cor_2 = int(len[1])
-                    self.grid[cor_1][cor_2] = car_id
+                    self.grid[cor_1][cor_2] = car.id
 
     def update(self):
-        self.grid = load_grid()
-        self.grid = add_cars()
-
-p1 = Grid(6)
+        self.load_grid()
+        foself.add_cars()
