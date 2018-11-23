@@ -1,11 +1,10 @@
 from class_auto import Auto
 from grid import Grid
-from possiblemoves import *
 from types import *
 from random import *
 
 
-def load_cars(self, filename):
+def load_cars(filename):
     ''' docstring placeholder '''
     with open(filename, "r") as file_cars:
         all_cars = []
@@ -22,3 +21,5 @@ def load_cars(self, filename):
                 auto = Auto(id, direction, position, type)
                 all_cars.append(auto)
     return all_cars
+
+load_cars('autos.txt')
