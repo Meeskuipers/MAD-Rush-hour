@@ -38,4 +38,5 @@ class Grid(object):
 
     def update(self):
         self.load_grid()
-        foself.add_cars()
+        self.add_cars()
+        return(self.grid)

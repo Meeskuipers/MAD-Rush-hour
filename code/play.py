@@ -28,10 +28,6 @@ def move(grid,command):
     grid.all_cars[car-1].move_car(direction)
 
 
-def won(grid):
-    if grid.grid[2][5] == '6':
-        return(True)
-
 def printgrid(grid):
     for row in grid.grid:
         for number in row:
