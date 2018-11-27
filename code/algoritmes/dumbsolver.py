@@ -1,6 +1,6 @@
-from class_auto import Auto
-from grid import Grid
-from possiblemoves import *
+from classes.class_auto import Auto
+from classes.grid import Grid
+from algoritmes.possiblemoves import *
 from types import *
 from random import *
 from play import *
@@ -20,7 +20,11 @@ def dumbsolver(size):
         grid.grid = grid.update()
         show_grid(grid.grid)
     if counter < 1999:
+<<<<<<< HEAD:code/dumbsolver.py
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+=======
+        print("it took "  +str(counter)+  "moves to win (for the computer, you are an idiot who chose solve)")
+>>>>>>> 505fa5830b52eab19f8b976d3b1b90dd1aaf73a7:code/algoritmes/dumbsolver.py
 
 def won(grid):
     if grid[2][5] == 6:
