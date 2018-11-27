@@ -1,5 +1,4 @@
 from algoritmes.dumbsolver import dumbsolver
-from informed import informed
 from play import play
 
 def main():
@@ -11,8 +10,6 @@ def main():
         play(int(gridsize))
     elif choice == 'dumbsolve':
         dumbsolver(int(gridsize))
-    elif choice == 'informed':
-        informed(int(gridsize))
     else:
         print('Thats is not a valid input')
         main()
