@@ -6,20 +6,21 @@ from random import *
 from play import *
 
 def dumbsolver(size):
+    ''' docstring placeholder '''
     grid = Grid(size)
     counter = 0
     while not grid.won():
         possible_moves = []
         possible_moves = possiblemoves(grid)
         randommove = randint(0,len(possible_moves)-1)
-        move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possiblemoves[randommove][2]])
+        move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
         counter += 1
-        if counter == 200:
+        if counter == 2000:
             dumbsolver(size)
         grid.grid = grid.update()
-        # show_grid(grid.grid)
-    if counter < 199:
-        print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+        show_grid(grid.grid)
+    if counter < 1999:
+    print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
 
 def won(grid):
     if grid[2][5] == 6:
