@@ -1,10 +1,5 @@
-from class_auto import Auto
-from grid import Grid
-from possiblemoves import *
-from types import *
-from random import *
 from dumbsolver import dumbsolver
-from play import *
+from play import play
 
 def main():
     ''' docstring placeholder
