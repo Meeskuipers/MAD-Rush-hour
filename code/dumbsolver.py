@@ -18,9 +18,9 @@ def dumbsolver(size):
         if counter == 2000:
             dumbsolver(size)
         grid.grid = grid.update()
-        show_grid(grid.grid)
+        #show_grid(grid.grid)
     if counter < 1999:
-    print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+        print("it took "  +str(counter)+  "moves to win (for the computer, you are an idiot who chose solve)")
 
 def won(grid):
     if grid[2][5] == 6:
