@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 from algoritmes.dumbsolver import dumbsolver
-=======
-from dumbsolver import dumbsolver
 from informed import informed
->>>>>>> 8e7c91626f6684b1a3980918b5670453718cc3bb
 from play import play
 
 def main():
