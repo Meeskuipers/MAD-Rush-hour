@@ -51,6 +51,6 @@ class Grid(object):
             newposition = []
             for i in range(0,self.size):
                 for x in range(0,self.size):
-                    if grid[i][x] == car.id:
-                        position.append([i,x])
+                    if self.grid[i][x] == car.id:
+                        newposition.append([i,x])
             car.position = newposition
