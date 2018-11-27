@@ -1,10 +1,10 @@
-from class_auto import Auto
+from classes.class_auto import Auto
 
 # Deze class definieerd de grid en implementeerd de auto's
 class Grid(object):
 
     def __init__(self,size):
-        self.load_cars('game_2.txt')
+        self.load_cars('boards/game_1.txt')
         self.size = size
         self.load_grid()
         self.add_cars()
@@ -44,3 +44,13 @@ class Grid(object):
     def won(self):
         if self.grid[2][5] == 6:
             return True
+
+    #def updatecars(self):
+        #for car in self.all_cars:
+            #id = car.id
+            #newposition = []
+            #for i in range(0,self.size):
+                #for x in range(0,self.size):
+                    #if self.grid[i][x] == car.id:
+                        #newposition.append([i,x])
+            #car.position = newposition

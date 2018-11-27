@@ -1,5 +1,5 @@
-from grid import Grid
-from class_auto import Auto
+from classes.grid import Grid
+from classes.class_auto import Auto
 
 
 def possiblemoves(grid):
