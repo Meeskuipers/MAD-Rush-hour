@@ -1,5 +1,5 @@
 from dumbsolver import dumbsolver
-from dijkstra import dijkstra
+from informed import informed
 from play import play
 
 def main():
