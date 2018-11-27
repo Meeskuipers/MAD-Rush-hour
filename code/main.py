@@ -1,4 +1,5 @@
 from dumbsolver import dumbsolver
+from dijkstra import dijkstra
 from play import play
 
 def main():
@@ -10,6 +11,8 @@ def main():
         play(int(gridsize))
     elif choice == 'dumbsolve':
         dumbsolver(int(gridsize))
+    elif choice == 'dijkstra':
+        dijkstra(int(gridsize))
     else:
         print('Thats is not a valid input')
         main()
