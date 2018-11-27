@@ -18,12 +18,13 @@ def play(size):
 
 def move(grid,command):
     ''' docstring placeholder '''
-    if len(command) != 2:
+    if len(command) != 3:
         print("huh")
         return(False)
     car = int(command[0])
     direction = command[1]
-    grid.all_cars[car-1].move_car(direction)
+    times = command[2]
+    grid.all_cars[car-1].move_car(direction,times)
 
 
 def printgrid(grid):
