@@ -1,10 +1,10 @@
-from class_auto import Auto
+from classes.class_auto import Auto
 
 # Deze class definieerd de grid en implementeerd de auto's
 class Grid(object):
 
     def __init__(self,size):
-        self.load_cars('game_2.txt')
+        self.load_cars('boards/game_1.txt')
         self.size = size
         self.load_grid()
         self.add_cars()

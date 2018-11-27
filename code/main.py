@@ -1,4 +1,4 @@
-from dumbsolver import dumbsolver
+from algoritmes.dumbsolver import dumbsolver
 from play import play
 
 def main():

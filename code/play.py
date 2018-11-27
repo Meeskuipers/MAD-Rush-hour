@@ -1,5 +1,5 @@
-from class_auto import Auto
-from grid import Grid
+from classes.class_auto import Auto
+from classes.grid import Grid
 from types import *
 from random import *
 
