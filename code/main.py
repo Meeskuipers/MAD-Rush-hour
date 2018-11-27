@@ -1,5 +1,5 @@
 from dumbsolver import dumbsolver
-from informed import informed
+#from informed import informed
 from play import play
 
 def main():
