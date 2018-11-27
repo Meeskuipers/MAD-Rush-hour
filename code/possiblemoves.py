@@ -48,11 +48,11 @@ def calculatemove(car,freelist):
             if [int(car.position[0][0])-2,int(car.position[0][1])] in freelist:
                 movelist.append([car.id,'UP',2])
 
-                    if [int(car.position[0][0])-3,int(car.position[0][1])] in freelist:
-                        movelist.append([car.id,'UP',3])
+                if [int(car.position[0][0])-3,int(car.position[0][1])] in freelist:
+                    movelist.append([car.id,'UP',3])
 
-                        if [int(car.position[0][0])-4,int(car.position[0][1])] in freelist:
-                            movelist.append([car.id,'UP',4])
+                    if [int(car.position[0][0])-4,int(car.position[0][1])] in freelist:
+                        movelist.append([car.id,'UP',4])
 
         if [int(car.position[-1][0])+1,int(car.position[0][1])] in freelist:
             movelist.append([car.id,'DOWN',1])
