@@ -30,56 +30,68 @@ class Auto(object):
     def calculatemove(self,freelist):
         movelist = []
         if self.direction == 'HORIZONTAAL':
-
-            if [int(self.position[0][0]),int(self.position[0][1])-1] in freelist:
-                movelist.append([self.id,'LEFT',1])
-
-                if [int(self.position[0][0]),int(self.position[0][1])-2] in freelist:
-                    movelist.append([self.id,'LEFT',2])
-
-                    if [int(self.position[0][0]),int(self.position[0][1])-3] in freelist:
-                        movelist.append([self.id,'LEFT',3])
-
-                        if [int(self.position[0][0]),int(self.position[0][1])-4] in freelist:
-                            movelist.append([self.id,'LEFT',4])
-
-            if [int(self.position[0][0]),int(self.position[-1][1])+1] in freelist:
-                movelist.append([self.id,'RIGHT',1])
-
-                if [int(self.position[0][0]),int(self.position[-1][1])+2] in freelist:
-                    movelist.append([self.id,'RIGHT',2])
-
-                    if [int(self.position[0][0]),int(self.position[-1][1])+3] in freelist:
-                        movelist.append([self.id,'RIGHT',3])
-
-                        if [int(self.position[0][0]),int(self.position[-1][1])+4] in freelist:
-                            movelist.append([self.id,'RIGHT',4])
+            i = 1
+            while([int(self.position[0][0]),int(self.position[0][1])-i] in freelist):
+                movelist.append([self.id,'LEFT',i])
+                i += 1
+            # if [int(self.position[0][0]),int(self.position[0][1])-1] in freelist:
+            #     movelist.append([self.id,'LEFT',1])
+            #
+            #     if [int(self.position[0][0]),int(self.position[0][1])-2] in freelist:
+            #         movelist.append([self.id,'LEFT',2])
+            #
+            #         if [int(self.position[0][0]),int(self.position[0][1])-3] in freelist:
+            #             movelist.append([self.id,'LEFT',3])
+            #
+            #             if [int(self.position[0][0]),int(self.position[0][1])-4] in freelist:
+            #                 movelist.append([self.id,'LEFT',4])
+            i = 1
+            while([int(self.position[0][0]),int(self.position[-1][1])+i] in freelist):
+                movelist.append([self.id,'RIGHT',i])
+                i += 1
+            # if [int(self.position[0][0]),int(self.position[-1][1])+1] in freelist:
+            #     movelist.append([self.id,'RIGHT',1])
+            #
+            #     if [int(self.position[0][0]),int(self.position[-1][1])+2] in freelist:
+            #         movelist.append([self.id,'RIGHT',2])
+            #
+            #         if [int(self.position[0][0]),int(self.position[-1][1])+3] in freelist:
+            #             movelist.append([self.id,'RIGHT',3])
+            #
+            #             if [int(self.position[0][0]),int(self.position[-1][1])+4] in freelist:
+            #                 movelist.append([self.id,'RIGHT',4])
 
         elif self.direction == 'VERTICAAL':
-
-            if [int(self.position[0][0])-1,int(self.position[0][1])] in freelist:
-                movelist.append([self.id,'UP',1])
-
-                if [int(self.position[0][0])-2,int(self.position[0][1])] in freelist:
-                    movelist.append([self.id,'UP',2])
-
-                    if [int(self.position[0][0])-3,int(self.position[0][1])] in freelist:
-                        movelist.append([self.id,'UP',3])
-
-                        if [int(self.position[0][0])-4,int(self.position[0][1])] in freelist:
-                            movelist.append([self.id,'UP',4])
-
-            if [int(self.position[-1][0])+1,int(self.position[0][1])] in freelist:
-                movelist.append([self.id,'DOWN',1])
-
-                if [int(self.position[-1][0])+2,int(self.position[0][1])] in freelist:
-                    movelist.append([self.id,'DOWN',2])
-
-                    if [int(self.position[-1][0])+3,int(self.position[0][1])] in freelist:
-                        movelist.append([self.id,'DOWN',3])
-
-                        if [int(self.position[-1][0])+4,int(self.position[0][1])] in freelist:
-                            movelist.append([self.id,'DOWN',4])
+            i = 1
+            while([int(self.position[0][0])-i,int(self.position[0][1])] in freelist):
+                movelist.append([self.id,'UP',i])
+                i += 1
+            # if [int(self.position[0][0])-1,int(self.position[0][1])] in freelist:
+            #     movelist.append([self.id,'UP',1])
+            #
+            #     if [int(self.position[0][0])-2,int(self.position[0][1])] in freelist:
+            #         movelist.append([self.id,'UP',2])
+            #
+            #         if [int(self.position[0][0])-3,int(self.position[0][1])] in freelist:
+            #             movelist.append([self.id,'UP',3])
+            #
+            #             if [int(self.position[0][0])-4,int(self.position[0][1])] in freelist:
+            #                 movelist.append([self.id,'UP',4])
+            i = 1
+            while([int(self.position[-1][0])+i,int(self.position[0][1])] in freelist):
+                movelist.append([self.id,'DOWN',i])
+                i += 1
+            # if [int(self.position[-1][0])+1,int(self.position[0][1])] in freelist:
+            #     movelist.append([self.id,'DOWN',1])
+            #
+            #     if [int(self.position[-1][0])+2,int(self.position[0][1])] in freelist:
+            #         movelist.append([self.id,'DOWN',2])
+            #
+            #         if [int(self.position[-1][0])+3,int(self.position[0][1])] in freelist:
+            #             movelist.append([self.id,'DOWN',3])
+            #
+            #             if [int(self.position[-1][0])+4,int(self.position[0][1])] in freelist:
+            #                 movelist.append([self.id,'DOWN',4])
         return movelist
 
     def __str__(self):
