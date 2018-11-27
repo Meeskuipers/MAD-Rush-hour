@@ -8,15 +8,13 @@ def play(size):
     counter = 0
     print("Heee let's play!!!")
     playgrid = Grid(size)
-    while not won(playgrid):
+    while not playgrid.won():
         printgrid(playgrid)
         command = input("> ").upper().split(',')
         move(playgrid,command)
         playgrid.update()
     printgrid(playgrid)
     print('it took you' + str(counter) + 'moves to win')
-
-
 
 def move(grid,command):
     ''' docstring placeholder '''

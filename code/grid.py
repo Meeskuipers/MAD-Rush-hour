@@ -40,3 +40,7 @@ class Grid(object):
         self.load_grid()
         self.add_cars()
         return(self.grid)
+
+    def won(self):
+        if self.grid[2][5] == 6:
+            return True

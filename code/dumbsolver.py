@@ -8,7 +8,7 @@ from play import *
 def dumbsolver(size):
     grid = Grid(size)
     counter = 0
-    while not won(grid.grid):
+    while not grid.won():
         possible_moves = []
         possible_moves = possiblemoves(grid)
         randommove = randint(0,len(possible_moves)-1)

@@ -4,6 +4,7 @@ from possiblemoves import *
 from types import *
 from random import *
 from dumbsolver import dumbsolver
+from play import *
 
 def main():
     ''' docstring placeholder
