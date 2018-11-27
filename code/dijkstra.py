@@ -11,4 +11,6 @@ def dijkstra(size):
     counter = 0
     cache = {}
     while not grid.won():
+        possible_moves = []
+        possible_moves = possiblemoves(grid)
         

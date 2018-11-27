@@ -12,7 +12,7 @@ def dumbsolver(size):
         possible_moves = []
         possible_moves = possiblemoves(grid)
         randommove = randint(0,len(possible_moves)-1)
-        move(grid,[possible_moves[randommove][0],possible_moves[randommove][1]])
+        move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possiblemoves[randommove][2]])
         counter += 1
         if counter == 200:
             dumbsolver(size)
