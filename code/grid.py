@@ -4,7 +4,7 @@ from class_auto import Auto
 class Grid(object):
 
     def __init__(self,size):
-        self.load_cars('autos.txt')
+        self.load_cars('game_1.txt')
         self.size = size
         self.load_grid()
         self.add_cars()
