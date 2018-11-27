@@ -1,8 +1,4 @@
-
-#from dumbsolver import dumbsolver
-#from informed import informed
 from algoritmes.dumbsolver import dumbsolver
-
 from play import play
 
 def main():
