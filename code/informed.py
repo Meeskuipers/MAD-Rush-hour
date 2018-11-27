@@ -38,7 +38,7 @@ def informed(size):
 
         list_counter = min([len(i) for i in dict.values()])
         grid = list_counter[-1]
-        #updatecars(grid)
+        updatecars(grid)
 
     for i in range(0,len(cache[grid])):
         show_grid(i)
