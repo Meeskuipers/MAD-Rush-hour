@@ -14,10 +14,12 @@ def dumbsolver(size):
         randommove = randint(0,len(possible_moves)-1)
         move(grid,[possible_moves[randommove][0],possible_moves[randommove][1]])
         counter += 1
+        if counter == 200:
+            dumbsolver(size)
         grid.grid = grid.update()
         # show_grid(grid.grid)
-
-    print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+    if counter < 199:
+        print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
 
 def won(grid):
     if grid[2][5] == 6:
