@@ -23,10 +23,10 @@ def won(grid):
     if grid[2][5] == 6:
         return True
 
-# def show_grid(grid):
-#     for i in grid:
-#         for x in i:
-#             print("  ", end='')
-#             print(x, end='')
-#         print("")
-#     print("")
+def show_grid(grid):
+    for i in grid:
+        for x in i:
+            print("  ", end='')
+            print(x, end='')
+        print("")
+    print("")
