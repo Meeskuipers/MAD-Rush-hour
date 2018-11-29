@@ -1,4 +1,5 @@
 from classes.class_auto import Auto
+from draw import draw
 
 # Deze class definieerd de grid en implementeerd de auto's
 class Grid(object):
@@ -21,12 +22,12 @@ class Grid(object):
                 if line.isdigit():
                     id = int(line.strip())
                     line = file_cars.readline()
-                    direction = line.strip()
+                    colour = line.strip()
                     line = file_cars.readline().split()
                     position = [[xy for xy in coordinate.split(',')] for coordinate in line]
                     line = file_cars.readline()
                     type = line.strip()
-                    auto = Auto(id, direction, position, type)
+                    auto = Auto(id, colour, position, type)
                     self.all_cars.append(auto)
 
     def add_cars(self):
@@ -35,6 +36,7 @@ class Grid(object):
                     cor_1 = int(len[0])
                     cor_2 = int(len[1])
                     self.grid[cor_1][cor_2] = car.id
+        draw(self.all_cars)
 
     def update(self):
         self.load_grid()

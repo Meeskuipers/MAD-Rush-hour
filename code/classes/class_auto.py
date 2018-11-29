@@ -1,9 +1,9 @@
 #de class auto definieert autos binnen onze grid. iedere auto heeft een id nummer,
 #direction, positie en een type
 class Auto(object):
-    def __init__(self, id, direction, position, type):
+    def __init__(self, id, colour, position, type):
         self.id = id
-        self.direction = direction
+        self.colour = colour
         self.position = position
         self.type =  type
 
