@@ -5,7 +5,7 @@ from draw import draw
 class Grid(object):
 
     def __init__(self,size):
-        self.load_cars('boards/game_1.txt')
+        self.load_cars('boards/game_2.txt')
         self.size = size
         self.load_grid()
         self.add_cars()

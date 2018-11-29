@@ -1,4 +1,5 @@
 import tkinter as tk
+import time
 
 def draw(cars):
     window = tk.Tk()
@@ -13,4 +14,4 @@ def draw(cars):
     for car in cars:
         canvas.create_rectangle(5+(int(car.position[0][1])*95),5+(int(car.position[0][0])*95),95+(int(car.position[-1][1])*95), 95+(int(car.position[-1][0])*95), outline=car.colour, fill=car.colour)
 
-    window.mainloop()
+    canvas.mainloop()

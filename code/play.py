@@ -14,8 +14,9 @@ def play(size):
         command = input("> ").upper().split(',')
         move(playgrid,command)
         playgrid.update()
+        counter = counter + 1
     printgrid(playgrid)
-    print('it took you' + str(counter) + 'moves to win')
+    print('it took you ' + str(counter) + ' moves to win')
 
 def move(grid,command):
     ''' docstring placeholder '''
