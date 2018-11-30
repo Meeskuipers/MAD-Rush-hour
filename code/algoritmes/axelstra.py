@@ -13,21 +13,26 @@ def informed(size,bord):
     cachelist = [startnode]
 
     while not grid.won():
-        possible_moves = []
-        possible_moves = possiblemoves(grid)
         shortestnode = shortpath(cachelist)
         grid.grid = shortestnode.grid
+        printgrid(grid)
+        input()
+        grid.updatecars()
+        newpath = shortestnode.path
+        possible_moves = []
+        possible_moves = possiblemoves(grid)
+        print(possible_moves)
 
         for i in range(len(possible_moves)):
             move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
-            cacheentry = checkpath(grid,cachelist)
-            newpath = cacheentry.path
-            newpath.append(grid.grid)
             grid.grid = grid.update()
-            print(checkgrid(grid,cachelist))
-            if checkgrid(grid.grid,cachelist):
+            printgrid(grid)
+            newpath.append(grid.grid)
+            if checkgrid(grid,cachelist):
                 newnode = Cache(grid.grid,newpath)
                 cachelist.append(newnode)
+            else:
+                print('doesnt update cache')
 
             movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
 
@@ -40,7 +45,7 @@ def checkgrid(grid,cachelist):
     gridlist = []
     for i in cachelist:
         gridlist.append(i.grid)
-    if grid in gridlist:
+    if compare(grid.grid,gridlist):
         return False
     else:
         return True
@@ -49,7 +54,7 @@ def checkpath(grid,cachelist):
     pathlength = 2000
     cacheentry = cachelist[0]
     for i in cachelist:
-        if grid == i.grid:
+        if checkgrid(grid,cachelist):
             if len(i.path) < pathlength:
                 cacheentry = i
     return cacheentry
@@ -82,3 +87,17 @@ def printgrid(grid):
             print("", end=" ")
             print(number, end=" ")
         print()
+
+def compare(grid,gridlist):
+    bool = True
+    for i in gridlist:
+        for x in range(len(grid)):
+            for z in range(len(grid)):
+                if grid[x][z] == i[x][z]:
+                    bool = True
+                else:
+                    bool = False
+                    break
+            if bool == False:
+                break
+    return bool

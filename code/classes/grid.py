@@ -44,15 +44,42 @@ class Grid(object):
         return(self.grid)
 
     def won(self):
-        if self.grid[2][5] == 6:
+        if self.grid[2][5] == 2:
             return True
 
-    # def updatecars(self):
-    #     for car in self.all_cars:
-    #         id = car.id
-    #         newposition = []
-    #         for i in range(0,self.size):
-    #             for x in range(0,self.size):
-    #                 if self.grid[i][x] == car.id:
-    #                     newposition.append([i,x])
-    #         car.position = newposition
+    def updatecars(self):
+        cardict = {}
+        rowcounter = 0
+        for row in self.grid:
+            icounter = 0
+            for i in row:
+
+                if i != 0:
+                    if cardict.get(i,0) == 0:
+                        cardict[i] = [[rowcounter,icounter]]
+                    else:
+                        cardict[i].append([rowcounter,icounter])
+                icounter += 1
+            rowcounter += 1
+
+        for key in cardict.keys():
+            for car in self.all_cars:
+                if key == car.id:
+                    car.position = cardict[key]
+
+
+
+        # for row in self.grid:
+        #     for i in row:
+        #         if self.grid[row][i] != 0:
+        #             if self.grid[row][i+1] != self.grid[row][i]:
+        #                 if self.grid[row+2][i] == self.grid[grid][i]:
+        #                     car.position = 1#vrachtwagen verticaal
+        #                 else:
+        #                     car.position = 1#auto verticaal
+        #             else:
+        #                 if self.grid[row][i+2] == self.grid[row][i]:
+        #                     car.position = 1#vrachtwaagen HORIZONTAAL
+        #                 else:
+        #                     car.position = #auto HORIZONTAAL
+        #     car.position = newposition

@@ -1,0 +1,9 @@
+1
+VERTICAAL
+0,5 1,5 2,5
+#FF7F50
+
+2
+HORIZONTAAL
+2,3 2,4
+red
