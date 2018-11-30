@@ -2,7 +2,7 @@ from algoritmes.dumbsolver import dumbsolver
 from play import play
 
 def main():
-    ''' docstring placeholder
+    ''' Main is called to start the program, it takes no arguments and will call other functions depending on input.
     '''
     bordlist = ['boards/game_1.txt','boards/game_2.txt','boards/game_3.txt','boards/game_4.txt','boards/game_5.txt','boards/game_6.txt']
     choice = input('type play or dumbsolve or informed    ')
