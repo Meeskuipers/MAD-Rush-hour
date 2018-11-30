@@ -17,15 +17,18 @@ def informed(size,bord):
         possible_moves = possiblemoves(grid)
         shortestnode = shortpath(cachelist)
         grid.grid = shortestnode.grid
+
         for i in range(len(possible_moves)):
             move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
             cacheentry = checkpath(grid,cachelist)
             newpath = cacheentry.path
             newpath.append(grid.grid)
             grid.grid = grid.update()
-            if checkgrid(grid,cachelist):
+            print(checkgrid(grid,cachelist))
+            if checkgrid(grid.grid,cachelist):
                 newnode = Cache(grid.grid,newpath)
                 cachelist.append(newnode)
+
             movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
 
     shortestpath = checkpath(grid,cachelist)
@@ -37,7 +40,7 @@ def checkgrid(grid,cachelist):
     gridlist = []
     for i in cachelist:
         gridlist.append(i.grid)
-    if grid.grid in gridlist:
+    if grid in gridlist:
         return False
     else:
         return True
