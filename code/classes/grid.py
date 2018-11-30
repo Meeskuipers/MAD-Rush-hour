@@ -51,12 +51,12 @@ class Grid(object):
         if self.grid[2][5] == 6:
             return True
 
-    #def updatecars(self):
-        #for car in self.all_cars:
-            #id = car.id
-            #newposition = []
-            #for i in range(0,self.size):
-                #for x in range(0,self.size):
-                    #if self.grid[i][x] == car.id:
-                        #newposition.append([i,x])
-            #car.position = newposition
+    # def updatecars(self):
+    #     for car in self.all_cars:
+    #         id = car.id
+    #         newposition = []
+    #         for i in range(0,self.size):
+    #             for x in range(0,self.size):
+    #                 if self.grid[i][x] == car.id:
+    #                     newposition.append([i,x])
+    #         car.position = newposition
