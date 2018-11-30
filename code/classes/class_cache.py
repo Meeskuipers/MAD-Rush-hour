@@ -1,4 +1,7 @@
-class cache(object):
-    def __init__(self, node, optimal):
-        self.node = node
-        self.visited = optimal
+from classes.class_auto import Auto
+from classes.grid import Grid
+
+class Cache(object):
+    def __init__(self,grid, path):
+        self.grid = grid
+        self.path = path
