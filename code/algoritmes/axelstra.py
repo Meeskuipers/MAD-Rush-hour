@@ -6,10 +6,10 @@ from play import move
 
 
 
-def axelstra(size):
+def axelstra(size,bord):
     grid = Grid(size)
     cache = {}
-
+    
 
 
 
