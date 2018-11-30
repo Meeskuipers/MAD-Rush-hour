@@ -9,3 +9,5 @@ def dannystra(size,bord):
     """lijkt op hill climber algoritme"""
     grid = Grid(size,bord)
     cache = {}
+    for elem in list():
+        print(elem)
