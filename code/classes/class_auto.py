@@ -29,6 +29,7 @@ class Auto(object):
 
     def calculatemove(self,freelist):
         movelist = []
+        print(freelist)
         if self.direction == 'HORIZONTAAL':
             # i = 1
             # while([int(self.position[0][0]),int(self.position[0][1])-i] in freelist):

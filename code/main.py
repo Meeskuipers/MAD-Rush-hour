@@ -1,6 +1,7 @@
 from algoritmes.dumbsolver import dumbsolver
 from algoritmes.dannystra import dannystra
 from algoritmes.axelstra import *
+from algoritmes.breadth import *
 from play import play
 
 def main():
@@ -20,6 +21,8 @@ def main():
         dannystra(int(gridsize),bord)
     elif choice == 'informed':
         informed(int(gridsize),bord)
+    elif choice == 'breadth':
+        breadth(int(gridsize),bord)
     else:
         print('Thats is not a valid input')
         main()

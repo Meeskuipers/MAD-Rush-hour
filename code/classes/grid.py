@@ -33,9 +33,9 @@ class Grid(object):
     def add_cars(self):
         for car in self.all_cars:
             for len in car.position:
-                    cor_1 = int(len[0])
-                    cor_2 = int(len[1])
-                    self.grid[cor_1][cor_2] = car.id
+                cor_1 = int(len[0])
+                cor_2 = int(len[1])
+                self.grid[cor_1][cor_2] = car.id
         # draw(self.all_cars)
 
     def update(self):
@@ -44,7 +44,7 @@ class Grid(object):
         return(self.grid)
 
     def won(self):
-        if self.grid[2][5] == 2:
+        if self.grid[2][5] == 6:
             return True
 
     def updatecars(self):
