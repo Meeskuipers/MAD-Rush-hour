@@ -36,11 +36,7 @@ class Grid(object):
                     cor_1 = int(len[0])
                     cor_2 = int(len[1])
                     self.grid[cor_1][cor_2] = car.id
-<<<<<<< HEAD
-        #draw(self.all_cars)
-=======
         # draw(self.all_cars)
->>>>>>> dda3751ff89624530f35790c845bae049cdcf4a6
 
     def update(self):
         self.load_grid()
