@@ -1,4 +1,5 @@
 from algoritmes.dumbsolver import dumbsolver
+from algoritmes.dannystra import dannystra
 from play import play
 
 def main():
@@ -14,6 +15,8 @@ def main():
         play(int(gridsize),bord)
     elif choice == 'dumbsolve':
         dumbsolver(int(gridsize),bord)
+    elif choice == 'danny':
+        dannystra(int(gridsize),bord)
     else:
         print('Thats is not a valid input')
         main()
