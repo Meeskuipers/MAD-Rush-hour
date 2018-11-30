@@ -36,7 +36,7 @@ class Grid(object):
                     cor_1 = int(len[0])
                     cor_2 = int(len[1])
                     self.grid[cor_1][cor_2] = car.id
-        draw(self.all_cars)
+        #draw(self.all_cars)
 
     def update(self):
         self.load_grid()
