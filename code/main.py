@@ -1,4 +1,9 @@
 from algoritmes.dumbsolver import dumbsolver
+<<<<<<< HEAD
+from algoritmes.dannystra import dannystra
+=======
+from algoritmes.axelstra import *
+>>>>>>> 1437541a4f6abce255dd86e8915318c55907258f
 from play import play
 
 def main():
@@ -14,6 +19,13 @@ def main():
         play(int(gridsize),bord)
     elif choice == 'dumbsolve':
         dumbsolver(int(gridsize),bord)
+<<<<<<< HEAD
+    elif choice == 'danny':
+        dannystra(int(gridsize),bord)
+=======
+    elif choice == 'informed':
+        informed(int(gridsize),bord)
+>>>>>>> 1437541a4f6abce255dd86e8915318c55907258f
     else:
         print('Thats is not a valid input')
         main()

@@ -6,11 +6,8 @@ from play import move
 import copy
 
 def informed(size,bord):
-    grid = Grid(size)
+    grid = Grid(size,bord)
     cache = {}
-    copiedgrid = copy.deepcopy(grid)
-    print(grid)
-    print(copiedgrid)
     cache[copiedgrid] = [grid.grid]
     while not grid.won():
         possible_moves = []
