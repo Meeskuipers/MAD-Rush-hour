@@ -1,4 +1,5 @@
 from algoritmes.dumbsolver import dumbsolver
+from algoritmes.dannystra import dannystra
 from algoritmes.axelstra import *
 from play import play
 
@@ -15,6 +16,8 @@ def main():
         play(int(gridsize),bord)
     elif choice == 'dumbsolve':
         dumbsolver(int(gridsize),bord)
+    elif choice == 'danny':
+        dannystra(int(gridsize),bord)
     elif choice == 'informed':
         informed(int(gridsize),bord)
     else:
