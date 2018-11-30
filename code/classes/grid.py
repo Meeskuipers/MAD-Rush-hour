@@ -22,12 +22,12 @@ class Grid(object):
                 if line.isdigit():
                     id = int(line.strip())
                     line = file_cars.readline()
-                    colour = line.strip()
+                    direction = line.strip()
                     line = file_cars.readline().split()
                     position = [[xy for xy in coordinate.split(',')] for coordinate in line]
                     line = file_cars.readline()
                     type = line.strip()
-                    auto = Auto(id, colour, position, type)
+                    auto = Auto(id, direction, position, type)
                     self.all_cars.append(auto)
 
     def add_cars(self):
@@ -36,7 +36,11 @@ class Grid(object):
                     cor_1 = int(len[0])
                     cor_2 = int(len[1])
                     self.grid[cor_1][cor_2] = car.id
+<<<<<<< HEAD
         #draw(self.all_cars)
+=======
+        # draw(self.all_cars)
+>>>>>>> dda3751ff89624530f35790c845bae049cdcf4a6
 
     def update(self):
         self.load_grid()

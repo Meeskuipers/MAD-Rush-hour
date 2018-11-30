@@ -1,13 +1,11 @@
-from class_auto import Auto
-from grid import *
-from possiblemoves import *
-from types import *
+from classes.class_auto import Auto
+from classes.grid import Grid
+from algoritmes.possiblemoves import possiblemoves
 from random import *
-from play import *
-from dumbsolver import *
+from play import move
 import copy
 
-def informed(size):
+def informed(size,bord):
     grid = Grid(size)
     cache = {}
     copiedgrid = copy.deepcopy(grid)
@@ -58,4 +56,4 @@ def informed(size):
 
 
 
-informed(6)
+informed(6,'boards/game_1.txt')

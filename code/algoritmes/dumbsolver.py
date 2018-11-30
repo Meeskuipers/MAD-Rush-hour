@@ -15,7 +15,7 @@ def dumbsolver(size,bord):
         move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
         counter += 1
         if counter == 2000:
-            dumbsolver(size)
+            dumbsolver(size,bord)
         grid.grid = grid.update()
     if counter < 1999:
 
