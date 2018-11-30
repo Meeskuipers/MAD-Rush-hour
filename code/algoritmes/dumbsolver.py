@@ -4,9 +4,9 @@ from algoritmes.possiblemoves import possiblemoves
 from random import *
 from play import move
 
-def dumbsolver(size):
+def dumbsolver(size,bord):
     ''' docstring placeholder '''
-    grid = Grid(size)
+    grid = Grid(size,bord)
     counter = 0
     while not grid.won():
         possible_moves = []

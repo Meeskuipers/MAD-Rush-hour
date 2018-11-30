@@ -4,11 +4,13 @@ from types import *
 from random import *
 from draw import draw
 
-def play(size):
+
+
+def play(size,bord):
     ''' docstring placeholder '''
     counter = 0
     print("Heee let's play!!!")
-    playgrid = Grid(size)
+    playgrid = Grid(size,bord)
     while not playgrid.won():
         printgrid(playgrid)
         command = input("> ").upper().split(',')

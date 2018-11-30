@@ -4,8 +4,8 @@ from draw import draw
 # Deze class definieerd de grid en implementeerd de auto's
 class Grid(object):
 
-    def __init__(self,size):
-        self.load_cars('boards/game_2.txt')
+    def __init__(self,size,bord):
+        self.load_cars(bord)
         self.size = size
         self.load_grid()
         self.add_cars()
