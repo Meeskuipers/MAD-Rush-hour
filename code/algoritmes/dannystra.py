@@ -20,5 +20,5 @@ def dannystra(size,bord):
             elif elem[2] > previous_elem[2]:
                 times = elem[2] - previous_elem[2]
                 print(times)
-
+    #nog toevoegen als weg voor winnercar vrij is --> doen
         previous_elem = copy.deepcopy(elem)
