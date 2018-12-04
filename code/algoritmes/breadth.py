@@ -13,12 +13,11 @@ def breadth(size,bord):
     possible_moves = []
     counter = 0
     bool = True
-    children = []
 
     while bool:
+        children = []
         counter += 1
         print('1')
-        input()
         for x in gridlist:
             print('2')
             print(len(gridlist))
@@ -32,7 +31,7 @@ def breadth(size,bord):
                 children.append(deepcopy(grid.grid))
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
-        gridlist = [a for a in childeren if a != x ]
+        gridlist = [a for a in children if a != x ]
         for z in children:
             print('4')
             if z[2][5] == 6:
