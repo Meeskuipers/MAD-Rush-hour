@@ -18,21 +18,21 @@ def breadth(size,bord):
     while bool:
         counter += 1
         print('1')
-        print(gridlist)
+        input()
         for x in gridlist:
             print('2')
+            print(len(gridlist))
             grid.grid = x
             grid.updatecars()
             possible_moves = possiblemoves(grid)
             for i in range(len(possible_moves)):
                 print('3')
-                print(possible_moves)
                 move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
                 grid.grid = grid.update()
                 children.append(deepcopy(grid.grid))
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
-        gridlist = children
+        gridlist = [a for a in childeren if a != x ]
         for z in children:
             print('4')
             if z[2][5] == 6:
