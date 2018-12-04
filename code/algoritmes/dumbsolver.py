@@ -1,8 +1,8 @@
-from classes.class_auto import Auto
-from classes.grid import Grid
-from algoritmes.possiblemoves import possiblemoves
+from code.classes.class_auto import Auto
+from code.classes.grid import Grid
+from code.helper.possiblemoves import possiblemoves
 from random import *
-from play import move
+from code.helper.play import move
 
 
 def dumbsolver(size,bord):
