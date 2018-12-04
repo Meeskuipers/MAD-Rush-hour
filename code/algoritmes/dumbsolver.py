@@ -14,7 +14,6 @@ def dumbsolver(size,bord):
         possible_moves = []
         possible_moves = possiblemoves(grid)
         randommove = randint(0,len(possible_moves)-1)
-        print(randommove)
         move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
         answer.append(possible_moves[randommove])
         grid.update()
