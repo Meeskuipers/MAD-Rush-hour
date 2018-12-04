@@ -19,9 +19,7 @@ def main():
     elif choice == 'danny':
         dannystra(int(gridsize),bord)
     elif choice == 'informed':
-        informed(int(gridsize),bord)
-    elif choice == 'breadth':
-        breadth(int(gridsize),bord)
+        informedbreadth(int(gridsize),bord)
     else:
         print('Thats is not a valid input')
         main()

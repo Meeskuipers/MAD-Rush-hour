@@ -5,7 +5,7 @@ from code.helper.possiblemoves import possiblemoves
 from random import *
 from code.helper.play import move
 
-def breadth(size,bord):
+def informedbreadth(size,bord):
     grid = Grid(size,bord)
     possible_moves = []
     counter = 0
