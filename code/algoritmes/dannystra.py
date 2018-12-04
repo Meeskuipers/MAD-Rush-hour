@@ -12,13 +12,12 @@ def dannystra(size,bord):
     grid = Grid(size,bord)
     cache = {}
     previous_elem = [0,0,0]
-    for elem in list():
-        if elem[0] == previous_elem[0]:
-            if elem[1] == previous_elem[1]:
-                times = elem[2] + previous_elem[2]
-                #print(times)
-            elif elem[2] > previous_elem[2]:
-                times = elem[2] - previous_elem[2]
-                print(times)
+    for elem in list()[:10]:
+        if elem[:2] == previous_elem[:2]:
+            times = elem[2] + previous_elem[2]
+
+        elif elem[0] == previous_elem[0]:
+            times = elem[2] - previous_elem[2]
+
     #nog toevoegen als weg voor winnercar vrij is --> doen
         previous_elem = copy.deepcopy(elem)
