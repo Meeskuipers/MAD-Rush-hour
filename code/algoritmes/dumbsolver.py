@@ -9,20 +9,22 @@ def dumbsolver(size,bord):
     ''' docstring placeholder '''
     grid = Grid(size,bord)
     counter = 0
-    #answer = []
+    answer = []
     while not grid.won():
         possible_moves = []
         possible_moves = possiblemoves(grid)
         randommove = randint(0,len(possible_moves)-1)
         print(randommove)
         move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
-        #answer.append(possible_moves[randommove])
+        answer.append(possible_moves[randommove])
+        grid.update()
         counter += 1
         if counter == 2000:
             dumbsolver(size,bord)
     if counter < 1999:
+        print(answer)
         # with open(Random_solve.txt) as f:
-        #     print(answer, file=f)
+        #      print(answer, file=f)
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
 
 def won(grid):
