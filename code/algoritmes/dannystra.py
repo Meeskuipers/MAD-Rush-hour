@@ -12,7 +12,7 @@ def dannystra(size,bord):
     grid = Grid(size,bord)
     cache = {}
     previous_elem = [0,0,0]
-    for elem in list()[:10]:
+    for elem in list():
         if elem[:2] == previous_elem[:2]:
             times = elem[2] + previous_elem[2]
 
