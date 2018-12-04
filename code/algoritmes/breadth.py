@@ -12,7 +12,7 @@ def informedbreadth(size,bord):
     counter = 0
     bool = True
     borddict = {}
-    borddict[str(grid.grid)] = grid.grid
+    borddict[str(grid.grid)] = deepcopy(grid.grid)
     explored = {}
     key = ''
 
@@ -29,11 +29,11 @@ def informedbreadth(size,bord):
                 grid.grid = grid.update()
                 if borddict[x] != grid.grid:
                     gridlist.append(deepcopy(grid.grid))
-                    if not explored.get(x,0):
-                        explored[x] = [grid.grid]
+                    if  explored.get(x,True):
+                        explored[x] = [deepcopy(grid.grid)]
                     else:
                         visited = explored[x]
-                        visited.append(grid.grid)
+                        visited.append(deepcopy(grid.grid))
                         explored[x] = visited
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
@@ -45,13 +45,13 @@ def informedbreadth(size,bord):
         for z in borddict.keys():
             if size == 6 and borddict[z][2][5] == 6:
                 bool = False
+                '''dit moet het path printen uit explored, maar gooit een key errorself.
+                (victory wordt nog aan gewerkt tegen deze magic nubmers)
+                explored is een dict met als keys een strin van een grid zoals borddict
+                de values zijn echter een lijst met grids die de path naar die node moeten voorstellen'''
+                #print(explored[z])
             elif size == 9 and borddict[z][4][8] == 15:
                 bool = False
-                '''dit moet het path printen uit explored, maar gooit een key errorself.
-                   (victory wordt nog aan gewerkt tegen deze magic nubmers)
-                   explored is een dict met als keys een strin van een grid zoals borddict
-                   de values zijn echter een lijst met grids die de path naar die node moeten voorstellen'''
-                #print(explored[z])
 
     print('it took' + " " + str(counter) + " " + "moves to win")
     return counter
