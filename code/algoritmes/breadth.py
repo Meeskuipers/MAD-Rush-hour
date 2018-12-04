@@ -12,9 +12,11 @@ def breadth(size,bord):
     bool = True
     borddict = {}
     borddict[str(grid.grid)] = grid.grid
+    explored = {}
 
     while bool:
         counter += 1
+        print(counter)
         gridlist = []
         for x in borddict.keys():
             grid.grid = borddict[x]
@@ -24,16 +26,18 @@ def breadth(size,bord):
                 move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
                 grid.grid = grid.update()
                 if borddict[x] != grid.grid:
-                    gridlist.append(grid.grid)
+                    gridlist.append(deepcopy(grid.grid))
+                    explored[x] = []
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
         for y in gridlist:
-            borddict[str(y)] = y
+            if explored.get(str(y),0) == 0:
+                borddict[str(y)] = y
         borddict.pop(x, None)
         for z in borddict.keys():
             if borddict[z][2][5] == 6:
                 bool = False
-    print('it took' + str(counter) + "moves to win")
+    print('it took' + " " + str(counter) + " " + "moves to win")
 
 
 def movecarback(grid,car,direction,times):
