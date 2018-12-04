@@ -1,11 +1,9 @@
-from classes.class_auto import Auto
-from classes.grid import Grid
-from classes.class_cache import Cache
-from algoritmes.possiblemoves import possiblemoves
-from random import *
-from play import move
 from copy import deepcopy
-
+from code.classes.class_auto import Auto
+from code.classes.grid import Grid
+from code.helper.possiblemoves import possiblemoves
+from random import *
+from code.helper.play import move
 
 def breadth(size,bord):
     grid = Grid(size,bord)
@@ -17,24 +15,23 @@ def breadth(size,bord):
 
     while bool:
         counter += 1
-        print('1')
+        gridlist = []
         for x in borddict.keys():
-            print('2')
-            print(len(borddict.keys()))
             grid.grid = borddict[x]
             grid.updatecars()
             possible_moves = possiblemoves(grid)
             for i in range(len(possible_moves)):
-                print('3')
                 move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
                 grid.grid = grid.update()
-                borddict[str(grid.grid)] = grid.grid
+                if borddict[x] != grid.grid:
+                    gridlist.append(grid.grid)
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
+        for y in gridlist:
+            borddict[str(y)] = y
         borddict.pop(x, None)
         for z in borddict.keys():
-            print('4')
-            if z[2][5] == 6:
+            if borddict[z][2][5] == 6:
                 bool = False
     print('it took' + str(counter) + "moves to win")
 
