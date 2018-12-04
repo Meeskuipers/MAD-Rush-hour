@@ -26,6 +26,7 @@ def dumbsolver(size,bord):
         # with open(Random_solve.txt) as f:
         #      print(answer, file=f)
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+        return counter
 
 def won(grid):
     if grid[2][5] == 6:

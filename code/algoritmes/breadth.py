@@ -43,7 +43,9 @@ def informedbreadth(size,bord):
         borddict.pop(x, None)
 
         for z in borddict.keys():
-            if borddict[z][2][5] == 6:
+            if size == 6 and borddict[z][2][5] == 6:
+                bool = False
+            elif size == 9 and borddict[z][4][8] == 15:
                 bool = False
                 '''dit moet het path printen uit explored, maar gooit een key errorself.
                    (victory wordt nog aan gewerkt tegen deze magic nubmers)
@@ -52,6 +54,7 @@ def informedbreadth(size,bord):
                 #print(explored[z])
 
     print('it took' + " " + str(counter) + " " + "moves to win")
+    return counter
 
 def movecarback(grid,car,direction,times):
     if direction == 'LEFT':
