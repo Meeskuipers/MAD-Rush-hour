@@ -9,30 +9,30 @@ from copy import deepcopy
 
 def breadth(size,bord):
     grid = Grid(size,bord)
+    gridlist = [grid.grid]
     possible_moves = []
     counter = 0
     bool = True
-    borddict = {}
-    borddict[str(grid.grid)] = grid.grid
 
     while bool:
+        children = []
         counter += 1
         print('1')
-        for x in borddict.keys():
+        for x in gridlist:
             print('2')
-            print(len(borddict.keys()))
-            grid.grid = borddict[x]
+            print(len(gridlist))
+            grid.grid = x
             grid.updatecars()
             possible_moves = possiblemoves(grid)
             for i in range(len(possible_moves)):
                 print('3')
                 move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
                 grid.grid = grid.update()
-                borddict[str(grid.grid)] = grid.grid
+                children.append(deepcopy(grid.grid))
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
-        borddict.pop(x, None)
-        for z in borddict.keys():
+        gridlist = [a for a in children if a != x ]
+        for z in children:
             print('4')
             if z[2][5] == 6:
                 bool = False
