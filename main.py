@@ -3,6 +3,7 @@ from code.algoritmes.dannystra import dannystra
 from code.algoritmes.axelstra import *
 from code.algoritmes.breadth import *
 from code.helper.play import play
+from code.helper.draw_2 import begin
 
 def main():
     ''' Main is called to start the program, it takes no arguments and will call other functions depending on input.
@@ -20,6 +21,8 @@ def main():
         dannystra(int(gridsize),bord)
     elif choice == 'informed':
         informedbreadth(int(gridsize),bord)
+    elif choice == 'draw':
+        begin()
     else:
         print('Thats is not a valid input')
         main()

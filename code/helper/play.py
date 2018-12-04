@@ -11,9 +11,12 @@ def play(size,bord):
     counter = 0
     print("Heee let's play!!!")
     playgrid = Grid(size,bord)
+    answer = []
     while not playgrid.won():
         printgrid(playgrid)
         command = input("> ").upper().split(',')
+        answer.append(playgrid.grid)
+        print(answer)
         move(playgrid,command)
         playgrid.update()
         counter = counter + 1
