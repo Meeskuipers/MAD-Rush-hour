@@ -11,8 +11,7 @@ def main():
     choice = input('type play or dumbsolve or informed    ')
     gridsize = input('what size would you like your board? (6)')
     nummer = input('bord 1,2,3,4,5 of 6?')
-    nummer = int(nummer) - 1
-    bord = bordlist[nummer]
+    bord = bordlist[int(nummer) - 1]
     if choice == 'play':
         play(int(gridsize),bord)
     elif choice == 'dumbsolve':
