@@ -33,6 +33,8 @@ class Grid(object):
     def add_cars(self):
         for car in self.all_cars:
             for len in car.position:
+                print('len:')
+                print(len)
                 cor_1 = int(len[0])
                 cor_2 = int(len[1])
                 self.grid[cor_1][cor_2] = car.id
@@ -66,20 +68,3 @@ class Grid(object):
             for car in self.all_cars:
                 if key == car.id:
                     car.position = cardict[key]
-
-
-
-        # for row in self.grid:
-        #     for i in row:
-        #         if self.grid[row][i] != 0:
-        #             if self.grid[row][i+1] != self.grid[row][i]:
-        #                 if self.grid[row+2][i] == self.grid[grid][i]:
-        #                     car.position = 1#vrachtwagen verticaal
-        #                 else:
-        #                     car.position = 1#auto verticaal
-        #             else:
-        #                 if self.grid[row][i+2] == self.grid[row][i]:
-        #                     car.position = 1#vrachtwaagen HORIZONTAAL
-        #                 else:
-        #                     car.position = #auto HORIZONTAAL
-        #     car.position = newposition

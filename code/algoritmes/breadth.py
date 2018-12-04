@@ -8,24 +8,25 @@ from play import move
 
 def breadth(size,bord):
     grid = Grid(size,bord)
-    gridlist = [grid]
+    gridlist = [grid.grid]
     possible_moves = []
     counter = 0
     bool = True
 
     while bool:
         counter += 1
-        possible_moves = possiblemoves(grid)
-        print(possible_moves)
         children = []
         for x in gridlist:
-            grid.id = x
+            print(x)
+            grid.grid = x
             grid.updatecars()
             for i in range(len(possible_moves)):
+                possible_moves = possiblemoves(grid)
                 move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
                 grid.grid = grid.update()
                 children.append(grid.grid)
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
+                grid.grid = grid.update()
         gridlist = children
         for z in children:
             if z[2][5] == 6:

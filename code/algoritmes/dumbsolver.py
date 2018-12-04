@@ -19,7 +19,6 @@ def dumbsolver(size,bord):
         counter += 1
         if counter == 2000:
             dumbsolver(size,bord)
-        grid.grid = grid.update()
     if counter < 1999:
         # with open(Random_solve.txt) as f:
         #     print(answer, file=f)
