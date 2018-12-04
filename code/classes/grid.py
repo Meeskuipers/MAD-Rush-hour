@@ -33,12 +33,10 @@ class Grid(object):
     def add_cars(self):
         for car in self.all_cars:
             for len in car.position:
-                print('len:')
-                print(len)
                 cor_1 = int(len[0])
                 cor_2 = int(len[1])
                 self.grid[cor_1][cor_2] = car.id
-        # draw(self.all_cars)
+        #draw(self.all_cars)
 
     def update(self):
         self.load_grid()
@@ -56,8 +54,8 @@ class Grid(object):
             icounter = 0
             for i in row:
 
-                if i != 0:
-                    if cardict.get(i,0) == 0:
+                if i :
+                    if not cardict.get(i, 0):
                         cardict[i] = [[rowcounter,icounter]]
                     else:
                         cardict[i].append([rowcounter,icounter])

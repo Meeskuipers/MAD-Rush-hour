@@ -4,6 +4,7 @@ from classes.class_cache import Cache
 from algoritmes.possiblemoves import possiblemoves
 from random import *
 from play import move
+from copy import deepcopy
 
 
 def breadth(size,bord):
@@ -12,23 +13,28 @@ def breadth(size,bord):
     possible_moves = []
     counter = 0
     bool = True
+    children = []
 
     while bool:
         counter += 1
-        children = []
+        print('1')
+        print(gridlist)
         for x in gridlist:
-            print(x)
+            print('2')
             grid.grid = x
             grid.updatecars()
+            possible_moves = possiblemoves(grid)
             for i in range(len(possible_moves)):
-                possible_moves = possiblemoves(grid)
+                print('3')
+                print(possible_moves)
                 move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
                 grid.grid = grid.update()
-                children.append(grid.grid)
+                children.append(deepcopy(grid.grid))
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
         gridlist = children
         for z in children:
+            print('4')
             if z[2][5] == 6:
                 bool = False
     print('it took' + str(counter) + "moves to win")

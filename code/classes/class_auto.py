@@ -28,9 +28,10 @@ class Auto(object):
                 self.position = [[int(elem[0])+1,elem[1]] for elem in self.position]
 
     def calculatemove(self,freelist):
-        print('end----------------------------------')
-        print(freelist)
+
         movelist = []
+        print('end----------------------------------')
+        print(self.position)
         if self.direction == 'HORIZONTAAL':
             # i = 1
             # while([int(self.position[0][0]),int(self.position[0][1])-i] in freelist):
@@ -94,6 +95,7 @@ class Auto(object):
 
                         if [int(self.position[-1][0])+4,int(self.position[0][1])] in freelist:
                             movelist.append([self.id,'DOWN',4])
+        print('movelist')
         print(movelist)
         return movelist
 
