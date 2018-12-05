@@ -7,7 +7,12 @@ from code.helper.play import move
 from code.helper.checkwin import win
 
 def informedbreadth(size,bord):
-    grid = Grid(size,bord)
+    ''' Informedbreadth takes two arguments: size and bord. size is an integer
+        defining the gridsize. bord is a string pointing to the according bord
+        in data. informedbreadth works like a breadth first search algoritm
+        without exploring previously visited nodes to reduce the space complexity
+        '''
+    grid = Grid(size, bord)
     possible_moves = []
     counter = 0
     bool = True
@@ -20,24 +25,32 @@ def informedbreadth(size,bord):
         counter += 1
         print(counter)
         gridlist = []
+
         for x in borddict.keys():
             grid.grid = borddict[x]
             grid.updatecars()
             possible_moves = possiblemoves(grid)
+
             for i in range(len(possible_moves)):
-                move(grid,[possible_moves[i][0],possible_moves[i][1],possible_moves[i][2]])
+                move(grid,[possible_moves[i][0],possible_moves[i][1],
+                possible_moves[i][2]])
                 grid.grid = grid.update()
+
                 if borddict[x] != grid.grid:
                     gridlist.append(deepcopy(grid.grid))
+
                     if  explored.get(x,True):
                         explored[x] = [deepcopy(grid.grid)]
+
                     else:
                         visited = explored[x]
                         visited.append(deepcopy(grid.grid))
                         explored[x] = visited
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
+
         for y in gridlist:
+
             if not explored.get(str(y),0):
                 borddict[str(y)] = y
         borddict.pop(x, None)

@@ -1,6 +1,5 @@
 from code.algoritmes.dumbsolver import dumbsolver
 from code.algoritmes.dannystra import dannystra
-from code.algoritmes.axelstra import *
 from code.algoritmes.breadth import *
 from code.helper.play import play
 from code.helper.draw_2 import begin
