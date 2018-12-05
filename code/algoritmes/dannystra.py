@@ -13,36 +13,33 @@ import copy
 def dannystra(size,bord):
     """lijkt op hill climber algoritme"""
     grid = Grid(size,bord)
-    newlist = []
-    last_move = [0,0,0]
-    #print(grid.grid)
-    for move in list():
-        if move[:2] == last_move[:2]:
-            newmove = move[:2] + [move[2]+last_move[2]]
-            #print(move, last_move, newmove)
-            newlist.append(newmove)
-        elif move[0] == last_move[0]:
-            if move[2] > last_move[2]:
-                newmove = move[:2] + [move[2]-last_move[2]]
-                newlist.append(newmove)
-            elif move[2] < last_move[2]:
-                newmove = last_move[:2] + [last_move[2]-move[2]]
-                newlist.append(newmove)
+    answer = remove_duplicates()
+    hillclimber(answer)
 
+def remove_duplicates():
+    newlist = [[0,0,0]]
+    for move in list():
+        if move[:2] == newlist[-1][:2]:
+            newmove = move[:2] + [move[2]+newlist[-1][2]]
+            newlist.pop()
+            newlist.append(newmove)
+        elif move[0] == newlist[-1][0]:
+            if move[2] > newlist[-1][2]:
+                newmove = move[:2] + [move[2]-newlist[-1][2]]
+            elif move[2] < newlist[-1][2]:
+                newmove = newlist[-1][:2] + [newlist[-1][2]-move[2]]
+            newlist.pop()
+            newlist.append(newmove)
         else:
             newlist.append(move)
+        # print(newlist)
+    return(newlist[1:])
 
-
-        last_move = move
-
-    # for i in range(len(w_list)):
-    #     #print(w_list[i][2])
-    #     if w_list[i][:2] == w_list[i+1][:2]:
-    #         times = w_list[i][2] + w_list[i+1][2]
-    #         w_list[i][2] = int(times)
-    #         del(w_list[i+1])
-    #         print(w_list[i])
-    #     elif w_list[i][0] == w_list[i+1][0]:
-    #         times = w_list[i][2] - w_list[i+1][2]
-            #print(times)
-    #nog toevoegen als weg voor winnercar vrij is --> doen
+def hillclimber(list):
+    print(list)
+    for i in range(len(list)-1):
+        a = copy.deepcopy(list[i])
+        b = copy.deepcopy(list[i+1])
+        list[i] = b
+        list[i+1] = a
+    print(list)
