@@ -3,6 +3,7 @@ from code.algoritmes.dannystra import dannystra
 from code.algoritmes.breadth import *
 from code.helper.play import play
 from code.helper.draw_2 import begin
+from code.helper.compare import compare
 
 def main():
     ''' Main is called to start the program, it takes no arguments and will call other functions depending on input.
@@ -13,15 +14,17 @@ def main():
     nummer = input('bord 1,2,3,4,5 of 6?')
     bord = bordlist[int(nummer) - 1]
     if choice == 'play':
-        play(int(gridsize),bord)
+        play(int(gridsize), bord)
     elif choice == 'dumbsolve':
-        dumbsolver(int(gridsize),bord)
+        dumbsolver(int(gridsize), bord)
     elif choice == 'danny':
-        dannystra(int(gridsize),bord)
+        dannystra(int(gridsize), bord)
     elif choice == 'informed':
-        informedbreadth(int(gridsize),bord)
+        informedbreadth(int(gridsize), bord)
     elif choice == 'draw':
         begin()
+    elif choice == 'compare':
+        compare(int(gridsize), bord)
     else:
         print('Thats is not a valid input')
         main()

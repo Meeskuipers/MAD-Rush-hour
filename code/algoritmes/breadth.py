@@ -23,7 +23,6 @@ def informedbreadth(size,bord):
 
     while bool:
         counter += 1
-        print(counter)
         gridlist = []
 
         #loops over each kid
@@ -68,6 +67,12 @@ def informedbreadth(size,bord):
 
     print('it took' + " " + str(counter) + " " + "moves to win")
     return counter
+
+
+
+
+
+
 
 def movecarback(grid,car,direction,times):
     if direction == 'LEFT':
