@@ -17,7 +17,7 @@ def informedbreadth(size,bord):
     counter = 0
     bool = True
     borddict = {}
-    borddict[str(grid.grid)] = deepcopy(grid.grid)
+    borddict[str(deepcopy(grid.grid))] = deepcopy(grid.grid)
     explored = {}
     key = ''
 
@@ -26,6 +26,7 @@ def informedbreadth(size,bord):
         print(counter)
         gridlist = []
 
+        #loops over each kid
         for x in borddict.keys():
             grid.grid = borddict[x]
             grid.updatecars()
@@ -35,25 +36,24 @@ def informedbreadth(size,bord):
                 move(grid,[possible_moves[i][0],possible_moves[i][1],
                 possible_moves[i][2]])
                 grid.grid = grid.update()
-
-                if borddict[x] != grid.grid:
+                if explored.get(x, False) != x:
                     gridlist.append(deepcopy(grid.grid))
 
-                    if  explored.get(x,True):
-                        explored[x] = [deepcopy(grid.grid)]
+                if  not explored.get(x,False):
+                    explored[x] = [deepcopy(grid.grid)]
 
-                    else:
-                        visited = explored[x]
-                        visited.append(deepcopy(grid.grid))
-                        explored[x] = visited
+                else:
+                    visited = explored[x]
+                    visited.append(deepcopy(grid.grid))
+                    explored[x] = visited
                 movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
                 grid.grid = grid.update()
 
+        borddict = {}
         for y in gridlist:
 
-            if not explored.get(str(y),0):
+            if not explored.get(str(y),False):
                 borddict[str(y)] = y
-        borddict.pop(x, None)
 
         for z in borddict.keys():
             if size == 6 and borddict[z][2][5] == 6:
