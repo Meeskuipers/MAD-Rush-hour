@@ -7,7 +7,7 @@ def win(grid, size):
     #     return False
     victoryx = ceil(size/2) -1
     victoryy = size - 1
-    if grid[victoryx][victoryy] == 6:
+    if grid.grid[victoryx][victoryy] == 6:
         return False
     else:
         return True

@@ -51,7 +51,7 @@ def draw(cars, colours, canvas):
         canvas.create_rectangle(5+(int(cars[car][0][1])*95),5+(int(cars[car][0][0])*95),95+(int(cars[car][-1][1])*95), 95+(int(cars[car][-1][0])*95), outline=colour, fill=colour)
 
     canvas.update()
-    time.sleep(0.2)
+    time.sleep(0.05)
 
 def done(canvas):
     canvas.mainloop()

@@ -3,6 +3,7 @@ from code.algoritmes.dannystra import dannystra
 from code.algoritmes.axelstra import *
 from code.algoritmes.breadth import *
 from code.helper.play import play
+from code.helper.play_2 import play_2
 from code.helper.draw_2 import begin
 
 def main():
@@ -21,8 +22,8 @@ def main():
         dannystra(int(gridsize),bord)
     elif choice == 'informed':
         informedbreadth(int(gridsize),bord)
-    elif choice == 'draw':
-        begin()
+    elif choice == 'bord':
+        play_2(int(gridsize),bord)
     else:
         print('Thats is not a valid input')
         main()
