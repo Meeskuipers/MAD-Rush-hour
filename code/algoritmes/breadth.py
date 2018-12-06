@@ -22,10 +22,11 @@ def informedbreadth(size,bord):
     key = ''
 
     while bool:
+        print(counter)
         counter += 1
         gridlist = []
 
-        #loops over each kid
+        #loops over each child
         for x in borddict.keys():
             grid.grid = borddict[x]
             grid.updatecars()

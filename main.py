@@ -9,7 +9,7 @@ from code.helper.draw_2 import begin
 def main():
     ''' Main is called to start the program, it takes no arguments and will call other functions depending on input.
     '''
-    bordlist = ['data/game_1.txt','data/game_2.txt','data/game_3.txt','data/game_4.txt','data/game_5.txt','data/game_6.txt','data/test.txt']
+    bordlist = ['data/game_1.txt','data/game_2.txt','data/game_3.txt','data/game_4.txt','data/game_5.txt','data/game_6.txt','data/game_7.txt']
     choice = input('type play, dumbsolve or informed    ')
     gridsize = input('what size would you like your board? (6)')
     nummer = input('bord 1,2,3,4,5 of 6?')
@@ -24,7 +24,6 @@ def main():
         informedbreadth(int(gridsize),bord)
     elif choice == 'bord':
         play_2(int(gridsize),bord)
-        informedbreadth(int(gridsize), bord)
     elif choice == 'draw':
         begin()
     elif choice == 'compare':
