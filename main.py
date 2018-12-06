@@ -28,7 +28,6 @@ def main():
         begin()
     elif choice == 'compare':
         compare(int(gridsize), bord)
->>>>>>> 11c3881f8cf23c29925371fee4e59aecacbf8fe5
     else:
         print('Thats is not a valid input')
         main()
