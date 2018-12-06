@@ -30,3 +30,4 @@ Als het ruilen van moves geen betere oplossing kan vinden, dan checkt het algori
 
  scores van algoritmes:
  Dumbsolver: hoge tot infinite time complexity, zeer lage space complexity.
+ Hill climber: hoge tot infinite time complexity, zeer lage space complexity.
