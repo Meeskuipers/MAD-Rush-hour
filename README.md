@@ -26,6 +26,8 @@ Dit algoritme heeft een gegenereerd antwoord nodig om vervolgens dit antwoord st
 Dit imperatieve algoritme checkt systematisch de hele lijst van moves en probeert het N-de element om te ruilen met het N+1-de element en checkt of dit ook een True op de winstatement oplevert. Zo ja dan wordt er een nieuwe lijst gereturnt met deze elementen omgedraaid. Als de hele lijst is doorgelopen dan worden alle duplicaten er weer uitgehaald waardoor er een betere en snellere oplossing is gevonden.
 Als het ruilen van moves geen betere oplossing kan vinden, dan checkt het algoritme of de beginstate opnieuw bereikt wordt. Zo ja, dan worden alle moves die daarvoor gedaan zijn weggegooid omdat ze niet bijdragen aan een beter antwoord.
 
+Breadth first algoritme:  
+###placeholder###
 
 Scores van algoritmes:  
 Dumbsolver: hoge tot infinite time complexity, zeer lage space complexity.  
