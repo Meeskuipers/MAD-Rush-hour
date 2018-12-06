@@ -19,7 +19,7 @@ def dannystra(size,bord):
     """
     grid = Grid(size,bord)
     list1 = dumbsolver(size, bord)
-    last_list = remove_duplicates(list1) #gaat alles door --> vernoemen
+    last_list = remove_duplicates(list1)
     counter = 0
     new_list = remove_duplicates(hillclimber(last_list, size, bord, counter))
 
@@ -29,8 +29,8 @@ def dannystra(size,bord):
         last_list = copy.deepcopy(new_list)
         new_list = remove_duplicates(hillclimber(new_list, size, bord, counter))
 
-    #play2 is alleen nodig om het antwoord te tekenen
-    #play_2(size, bord, new_list)
+    #in play wordt gecheckt of de begingrid opnieuw tegengekomen is
+    play_2(size, bord, new_list)
 
 def remove_duplicates(list):
     newlist = [[0,0,0]]
@@ -58,14 +58,19 @@ def hillclimber(list, size, bord, counter):
     grid = Grid(size, bord)
     hc_list = solver(list, size, grid, counter)
     answer1 = []
-    if len(hc_list) > 100:
-        max = 99
+    if counter < len(hc_list)-1:
+        if len(hc_list) > 400:
+            max = 399
+            #deze magicnumber houden de timecomplexity in toom
+        else:
+            max = len(hc_list)-2
+        if counter == max:
+            return hc_list
+        else:
+            counter += 1
+            return hillclimber(hc_list, size, bord, counter)
     else:
-        max = len(hc_list)-2
-    if counter == max:
-        return hc_list
-    else:
-        counter += 1
+        counter = 0
         return hillclimber(hc_list, size, bord, counter)
 
 
