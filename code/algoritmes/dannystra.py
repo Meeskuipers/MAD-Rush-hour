@@ -9,16 +9,17 @@ from code.algoritmes.dumbsolver import dumbsolver
 from random import *
 import copy
 
-#Doe ipv last_move de laatste item van newlist bekijken
-#Kijk of weghalen van een move nogsteeds zorgt voor een antwoord
-#check altijd of de weg van de rode auto vrij is
-#gaat alles door --> vernoemen
 #gebruik remove_duplicates als een check voor alles
 def dannystra(size,bord):
-    """lijkt op hill climber algoritme"""
+    """
+    Dit is een versie van een hill climb algoritme.
+    Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing van te maken.
+    Het heeft nodig als input een grootte en een bordconfiguratie
+    Het geeft als output een betere oplossing van dumbsolve
+    """
     grid = Grid(size,bord)
     list1 = dumbsolver(size, bord)
-    last_list = remove_duplicates(list1) #gaat alles door --> vernoemen
+    last_list = remove_duplicates(list1)
     counter = 0
     new_list = remove_duplicates(hillclimber(last_list, size, bord, counter))
 
@@ -28,6 +29,7 @@ def dannystra(size,bord):
         last_list = copy.deepcopy(new_list)
         new_list = remove_duplicates(hillclimber(new_list, size, bord, counter = 0))
 
+    #in play wordt gecheckt of de begingrid opnieuw tegengekomen is
     play_2(size, bord, new_list)
 
 def remove_duplicates(list):
@@ -56,14 +58,28 @@ def hillclimber(list, size, bord, counter):
     grid = Grid(size, bord)
     hc_list = solver(list, size, grid, counter)
     answer1 = []
+<<<<<<< HEAD
     if len(hc_list) > 500:
         max = 499
     else:
         max = len(hc_list)-2
     if counter == max:
         return hc_list
+=======
+    if counter < len(hc_list)-1:
+        if len(hc_list) > 400:
+            max = 399
+            #deze magicnumber houden de timecomplexity in toom
+        else:
+            max = len(hc_list)-2
+        if counter == max:
+            return hc_list
+        else:
+            counter += 1
+            return hillclimber(hc_list, size, bord, counter)
+>>>>>>> 30179cca93eb50f5f3b9538b6dcb567071f306b2
     else:
-        counter += 1
+        counter = 0
         return hillclimber(hc_list, size, bord, counter)
 
 

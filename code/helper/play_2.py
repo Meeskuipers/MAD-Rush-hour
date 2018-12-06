@@ -6,7 +6,6 @@ from random import *
 from code.helper.draw_2 import begin
 from code.helper.random_oplossing import list
 import copy
-# from code.algoritmes.dannystra import dannystra
 
 def play_2(size,bord,list):
     ''' docstring placeholder '''
@@ -18,8 +17,7 @@ def play_2(size,bord,list):
     for i in list:
         move(playgrid,i)
         playgrid.update()
-        if playgrid.grid == check:
-            print("huh")
+        if playgrid.grid == check: #Deel van hill climb algoritme
             counter = 0
             answer = []
         answer.append(playgrid.grid)
