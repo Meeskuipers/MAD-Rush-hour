@@ -19,7 +19,7 @@ def dumbsolver(size,bord):
         grid.update()
         counter += 1
         if counter == 2000:
-            dumbsolver(size,bord)
+            return dumbsolver(size,bord)
     if counter < 1999:
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
         return answer
