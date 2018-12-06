@@ -30,9 +30,6 @@ def dannystra(size,bord):
         new_list = remove_duplicates(hillclimber(new_list, size, bord, counter))
 
 
-
-
-
 def remove_duplicates(list):
     newlist = [[0,0,0]]
     for move in list:

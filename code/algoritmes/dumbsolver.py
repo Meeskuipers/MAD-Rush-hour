@@ -22,7 +22,7 @@ def dumbsolver(size,bord):
             dumbsolver(size,bord)
     if counter < 1999:
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
-        return answer
+        return answer 
 
 def won(grid):
     if grid[2][5] == 6:

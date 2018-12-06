@@ -7,10 +7,9 @@ from code.helper.draw_2 import begin
 from code.helper.random_oplossing import list
 from code.algoritmes.dannystra import dannystra
 
-def play_2(size,bord):
+def play_2(size,bord,list):
     ''' docstring placeholder '''
     counter = 0
-    print("Heee let's play!!!")
     playgrid = Grid(size,bord)
     answer = []
     answer.append(playgrid.grid)
