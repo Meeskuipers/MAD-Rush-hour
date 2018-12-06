@@ -4,7 +4,8 @@
 
 Probleem:
 Rush hour is een spel dat wordt gespeeld op een vierkant bord. Het doel van het spel is om auto’s op het bord slim te verplaatsen om zo een bepaalde auto het bord uit te kunnen rijden.
-![het simpelste bord]
+
+![het simpelste bord]  
 (https://github.com/Meeskuipers/MAD-Rush-hour/tree/master/code_2/Knipsel.png)
 De moeilijkheid van dit probleem zit hem in de optimale oplossing vinden voor ieder bord. De oplossing is wanneer de auto het bord uit is gereden in het minst mogelijke aantal zetten. Het vinden van de beste oplossing wordt moeilijker naarmate het bord groter wordt. De upperbound van de hoeveelheid configuraties (statespace) is afhankelijk van de hoeveelheid auto’s en vrachtwagens in het bord. De moveset is de maximaal hoeveelheid stappen van bord naar bord totdat het rode auto het bord heeft verlaten. Dit is dus de statespace min 1.
 Elke auto heeft een beweeg ruimte van de lengte van het bord min één, omdat de auto op twee plekken staat. Hetzelfde geld voor een vrachtauto, maar dan met min twee, omdat de vrachtwagen op drie plekke staat. Voor elke plek waar de auto staat is een nieuwe configuratie van het bord. Dus om alle mogelijkheden van het bord te vinden moet je de lengte van het bord min één/twee tot de macht van de hoeveelheid auto’s/vrachtwagen op het bord. Dit geeft de formule van de complexiteit van het probleem:
