@@ -5,7 +5,7 @@ from random import *
 # from code.helper.draw import draw
 from code.helper.draw_2 import begin
 from code.helper.random_oplossing import list
-from code.algoritmes.dannystra import dannystra
+# from code.algoritmes.dannystra import dannystra
 
 def play_2(size,bord,list):
     ''' docstring placeholder '''
@@ -13,9 +13,13 @@ def play_2(size,bord,list):
     playgrid = Grid(size,bord)
     answer = []
     answer.append(playgrid.grid)
-    for i in dannystra(size,bord):
+    for i in list:
         move(playgrid,i)
         playgrid.update()
+        for grid in answer:
+            if x == playgrid:
+                print("huh")
+                answer = []
         answer.append(playgrid.grid)
         counter = counter + 1
     begin(answer)

@@ -4,7 +4,7 @@ from code.helper.possiblemoves import possiblemoves
 from code.helper.play import move
 from code.helper.random_oplossing import list
 from code.helper.checkwin import win
-from code.helper.draw_2 import begin
+from code.helper.play_2 import play_2
 from code.algoritmes.dumbsolver import dumbsolver
 from random import *
 import copy
@@ -17,9 +17,8 @@ import copy
 def dannystra(size,bord):
     """lijkt op hill climber algoritme"""
     grid = Grid(size,bord)
-    list1 = list()
+    list1 = dumbsolver(size, bord)
     last_list = remove_duplicates(list1) #gaat alles door --> vernoemen
-    print(last_list)
     counter = 0
     new_list = remove_duplicates(hillclimber(last_list, size, bord, counter))
 
@@ -29,6 +28,7 @@ def dannystra(size,bord):
         last_list = copy.deepcopy(new_list)
         new_list = remove_duplicates(hillclimber(new_list, size, bord, counter))
 
+    play_2(size, bord, new_list)
 
 def remove_duplicates(list):
     newlist = [[0,0,0]]
