@@ -20,5 +20,13 @@ De uitdaging is het maken van een algoritme dat de beste oplossing vind voor gro
 algoritmes uit de hand lopen.
  Main:
 Als de user main aanroept wordt de user gevraagd om eerst de grid size te definieren. Als de gridsize gedifineert is krijgt de user de optie om zelf te spelen off een algortime zoals dumbsolver aan te roepen. De decision making van het gekozen algoritme wordt per keuze geprint om zo het het denkproces te kunnen volgen. Aan het einde van ieder algoritme wordt de hoeveelheid moves geprint.
+
+Algoritmes:
+Hill climbing algoritme:
+Dit algoritme heeft een gegenereerd antwoord nodig om vervolgens dit antwoord stapsgewijs probeert te verbeteren, dit antwoord is gegenereerd door de dumbsolver algoritme(deze lijst is dus elke keer anders). Dit antwoord is een lijst van alle moves die gedaan worden om een antwoord te vinden. Om te controleren of de uiteindelijke lijst daadwerkelijk een set van moves is dat een antwoord geeft wordt de grid getekend.
+Dit imperatieve algoritme checkt systematisch de hele lijst van moves en probeert het N-de element om te ruilen met het N+1-de element en checkt of dit ook een True op de winstatement oplevert. Zo ja dan wordt er een nieuwe lijst gereturnt met deze elementen omgedraaid. Als de hele lijst is doorgelopen dan worden alle duplicaten er weer uitgehaald waardoor er een betere en snellere oplossing is gevonden.
+Als het ruilen van moves geen betere oplossing kan vinden, dan checkt het algoritme of de beginstate opnieuw bereikt wordt. Zo ja, dan worden alle moves die daarvoor gedaan zijn weggegooid omdat ze niet bijdragen aan een beter antwoord.
+
+
  scores van algoritmes:
  Dumbsolver: hoge tot infinite time complexity, zeer lage space complexity.
