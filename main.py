@@ -21,12 +21,9 @@ def main():
     elif choice == 'danny':
         dannystra(int(gridsize), bord)
     elif choice == 'informed':
-<<<<<<< HEAD
         informedbreadth(int(gridsize),bord)
     elif choice == 'bord':
         play_2(int(gridsize),bord)
-=======
-        informedbreadth(int(gridsize), bord)
     elif choice == 'draw':
         begin()
     elif choice == 'compare':
