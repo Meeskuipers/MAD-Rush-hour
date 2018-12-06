@@ -15,14 +15,18 @@ def dumbsolver(size,bord):
         possible_moves = possiblemoves(grid)
         randommove = randint(0,len(possible_moves)-1)
         move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
-        answer.append(grid)
+        answer.append([possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
         grid.update()
         counter += 1
         if counter == 2000:
             dumbsolver(size,bord)
     if counter < 1999:
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+<<<<<<< HEAD
+        return answer
+=======
         return counter
+>>>>>>> aaea8153b8d44a9e3f41395c942118cead116209
 
 def won(grid):
     if grid[2][5] == 6:
