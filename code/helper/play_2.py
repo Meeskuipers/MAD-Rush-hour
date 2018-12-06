@@ -5,25 +5,27 @@ from random import *
 # from code.helper.draw import draw
 from code.helper.draw_2 import begin
 from code.helper.random_oplossing import list
+import copy
 # from code.algoritmes.dannystra import dannystra
 
 def play_2(size,bord,list):
     ''' docstring placeholder '''
     counter = 0
     playgrid = Grid(size,bord)
+    check = copy.deepcopy(playgrid.grid)
     answer = []
     answer.append(playgrid.grid)
     for i in list:
         move(playgrid,i)
         playgrid.update()
-        for grid in answer:
-            if x == playgrid:
-                print("huh")
-                answer = []
+        if playgrid.grid == check:
+            print("huh")
+            counter = 0
+            answer = []
         answer.append(playgrid.grid)
         counter = counter + 1
-    begin(answer)
     print('it took you ' + str(counter) + ' moves to win')
+    begin(answer)
 
 def move(grid,command):
     ''' docstring placeholder '''

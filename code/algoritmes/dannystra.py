@@ -32,9 +32,6 @@ def dannystra(size,bord):
     #play2 is alleen nodig om het antwoord te tekenen
     #play_2(size, bord, new_list)
 
-
-
-
 def remove_duplicates(list):
     newlist = [[0,0,0]]
     for move in list:
