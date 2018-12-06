@@ -58,14 +58,6 @@ def hillclimber(list, size, bord, counter):
     grid = Grid(size, bord)
     hc_list = solver(list, size, grid, counter)
     answer1 = []
-<<<<<<< HEAD
-    if len(hc_list) > 500:
-        max = 499
-    else:
-        max = len(hc_list)-2
-    if counter == max:
-        return hc_list
-=======
     if counter < len(hc_list)-1:
         if len(hc_list) > 400:
             max = 399
@@ -77,7 +69,6 @@ def hillclimber(list, size, bord, counter):
         else:
             counter += 1
             return hillclimber(hc_list, size, bord, counter)
->>>>>>> 30179cca93eb50f5f3b9538b6dcb567071f306b2
     else:
         counter = 0
         return hillclimber(hc_list, size, bord, counter)
