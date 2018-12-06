@@ -26,7 +26,7 @@ def dannystra(size,bord):
         print(len(last_list))
         print(len(new_list))
         last_list = copy.deepcopy(new_list)
-        new_list = remove_duplicates(hillclimber(new_list, size, bord, counter))
+        new_list = remove_duplicates(hillclimber(new_list, size, bord, counter = 0))
 
     play_2(size, bord, new_list)
 
@@ -56,8 +56,8 @@ def hillclimber(list, size, bord, counter):
     grid = Grid(size, bord)
     hc_list = solver(list, size, grid, counter)
     answer1 = []
-    if len(hc_list) > 100:
-        max = 99
+    if len(hc_list) > 500:
+        max = 499
     else:
         max = len(hc_list)-2
     if counter == max:
