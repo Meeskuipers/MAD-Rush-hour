@@ -9,13 +9,14 @@ from code.algoritmes.dumbsolver import dumbsolver
 from random import *
 import copy
 
-#Doe ipv last_move de laatste item van newlist bekijken
-#Kijk of weghalen van een move nogsteeds zorgt voor een antwoord
-#check altijd of de weg van de rode auto vrij is
-#gaat alles door --> vernoemen
 #gebruik remove_duplicates als een check voor alles
 def dannystra(size,bord):
-    """lijkt op hill climber algoritme"""
+    """
+    Dit is een versie van een hill climb algoritme.
+    Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing van te maken.
+    Het heeft nodig als input een grootte en een bordconfiguratie
+    Het geeft als output een betere oplossing van dumbsolve
+    """
     grid = Grid(size,bord)
     list1 = dumbsolver(size, bord)
     last_list = remove_duplicates(list1) #gaat alles door --> vernoemen
@@ -28,7 +29,8 @@ def dannystra(size,bord):
         last_list = copy.deepcopy(new_list)
         new_list = remove_duplicates(hillclimber(new_list, size, bord, counter))
 
-    play_2(size, bord, new_list)
+    #play2 is alleen nodig om het antwoord te tekenen
+    #play_2(size, bord, new_list)
 
 
 
