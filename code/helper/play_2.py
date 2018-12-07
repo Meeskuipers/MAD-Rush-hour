@@ -23,7 +23,7 @@ def play_2(size,bord,list):
         answer.append(playgrid.grid)
         counter = counter + 1
     print('it took you ' + str(counter) + ' moves to win')
-    begin(answer,size)
+    begin(answer, size)
 
 def move(grid,command):
     ''' docstring placeholder '''
