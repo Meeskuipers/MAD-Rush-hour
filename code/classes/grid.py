@@ -1,5 +1,4 @@
 from code.classes.class_auto import Auto
-from code.helper.draw import draw
 
 # Deze class definieerd de grid en implementeerd de auto's
 class Grid(object):
