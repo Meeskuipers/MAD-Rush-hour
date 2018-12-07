@@ -20,14 +20,17 @@ def main():
         dumbsolver(int(gridsize), bord)
     elif choice == 'danny':
         dannystra(int(gridsize), bord)
-    elif choice == 'informed':
-        informedbreadth(int(gridsize),bord)
+    # elif choice == 'informed':
+    #     informedbreadth(int(gridsize),bord)
     elif choice == 'bord':
         play_2(int(gridsize),bord)
     elif choice == 'draw':
         begin()
     elif choice == 'compare':
         compare(int(gridsize), bord)
+    elif choice == 'breadth':
+        breadth(int(gridsize), bord)
+
     else:
         print('Thats is not a valid input')
         main()

@@ -3,13 +3,10 @@ from code.classes.class_auto import Auto
 
 
 def possiblemoves(grid):
-    moveList = []
+    movelist = []
     free_list = freelist(grid)
-    for i in grid.all_cars:
-        movesCar = i.calculatemove(free_list)
-        for x in movesCar:
-            moveList.append(x)
-    return moveList
+    movelist = grid.calculatemove(free_list)
+    return movelist
 
 def freelist(grid):
     freelist = []

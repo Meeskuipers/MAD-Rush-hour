@@ -3,71 +3,87 @@ from code.classes.class_auto import Auto
 from code.classes.grid import Grid
 from code.helper.possiblemoves import possiblemoves
 from random import *
-from code.helper.play import move
+from code.helper.play import *
 from code.helper.checkwin import win
+from math import ceil
+from code.helper.draw_2 import begin
 
 def informedbreadth(size,bord):
-    ''' Informedbreadth takes two arguments: size and bord. size is an integer
-        defining the gridsize. bord is a string pointing to the according bord
-        in data. informedbreadth works like a breadth first search algoritm
-        without exploring previously visited nodes to reduce the space complexity
-        '''
-    grid = Grid(size, bord)
+    print('hoi')
+#
+# def breadth(size, bord):
+#     grid = Grid(size, bord)
+#     explored = set(str(grid.grid))
+#     bool = True
+#     states = [deepcopy(grid.grid)]
+#     counter = 0
+#
+#     while bool:
+#         counter += 1
+#         x = states.pop(0)
+#         grid.grid = deepcopy(x)
+#         grid.updatecars()
+#         possible_moves = possiblemoves(grid)
+#         for i in range(len(possible_moves)):
+#             move(grid,[possible_moves[i][0],possible_moves[i][1],
+#             possible_moves[i][2]])
+#             grid.update()
+#
+#             #if not str(grid.grid) in explored:
+#             bool = win(grid, size)
+#                 #explored.add(str(grid.grid))
+#             states.append(deepcopy(grid.grid))
+#             if not bool:
+#                 break
+#
+#             movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
+#             grid.update()
+
+
+
+
+def breadth(size,bord):
+    grid = Grid(size,bord)
     possible_moves = []
     counter = 0
     bool = True
     borddict = {}
-    borddict[str(deepcopy(grid.grid))] = deepcopy(grid.grid)
+    borddict[str(grid.grid)] = grid.grid
     explored = {}
-    key = ''
 
     while bool:
-        print(counter)
+        parentset = ()
         counter += 1
+        print(counter)
         gridlist = []
-
-        #loops over each child
-        for x in borddict.keys():
-            grid.grid = borddict[x]
+        for i in borddict.keys():
+            grid.grid = borddict[i]
             grid.updatecars()
             possible_moves = possiblemoves(grid)
-
-            for i in range(len(possible_moves)):
-                move(grid,[possible_moves[i][0],possible_moves[i][1],
-                possible_moves[i][2]])
+            for x in range(len(possible_moves)):
+                move(grid,[possible_moves[x][0],possible_moves[x][1],possible_moves[x][2]])
                 grid.grid = grid.update()
-                if explored.get(x, False) != x:
-                    gridlist.append(deepcopy(grid.grid))
+                gridlist.append(deepcopy(grid.grid))
+                movecarback(grid,possible_moves[x][0],possible_moves[x][1],possible_moves[x][2])
+                grid.update()
+        bordddict = {}
 
-                if  not explored.get(x,False):
-                    explored[x] = [deepcopy(grid.grid)]
-
-                else:
-                    visited = explored[x]
-                    visited.append(deepcopy(grid.grid))
-                    explored[x] = visited
-                movecarback(grid,possible_moves[i][0],possible_moves[i][1],possible_moves[i][2])
-                grid.grid = grid.update()
-
-        borddict = {}
         for y in gridlist:
-
-            if not explored.get(str(y),False):
-                borddict[str(y)] = y
-
-        for z in borddict.keys():
-            if size == 6 and borddict[z][2][5] == 6:
+            grid.grid = y
+            grid.updatecars()
+            borddict[str(y)] = y
+            if not win(grid, size):
                 bool = False
-                '''dit moet het path printen uit explored, maar gooit een key errorself.
-                (victory wordt nog aan gewerkt tegen deze magic nubmers)
-                explored is een dict met als keys een strin van een grid zoals borddict
-                de values zijn echter een lijst met grids die de path naar die node moeten voorstellen'''
-                #print(explored[z])
-            elif size == 9 and borddict[z][4][8] == 15:
-                bool = False
+                begin([y])
+                break
+
+
 
     print('it took' + " " + str(counter) + " " + "moves to win")
-    return counter
+
+
+
+
 
 
 

@@ -54,11 +54,10 @@ class Grid(object):
             icounter = 0
             for i in row:
 
-                if i :
-                    if not cardict.get(i, 0):
-                        cardict[i] = [[rowcounter,icounter]]
-                    else:
-                        cardict[i].append([rowcounter,icounter])
+                if not cardict.get(i, 0):
+                    cardict[i] = [[rowcounter,icounter]]
+                else:
+                    cardict[i].append([rowcounter,icounter])
                 icounter += 1
             rowcounter += 1
 
@@ -66,3 +65,36 @@ class Grid(object):
             for car in self.all_cars:
                 if key == car.id:
                     car.position = cardict[key]
+
+    def calculatemove(self, free_list):
+        movelist = []
+        for car in self.all_cars:
+            if car.direction == 'HORIZONTAAL':
+                for i in range(self.size):
+                    if ((int(car.position[0][1])-(i+1)) > -1):
+                        if [int(car.position[0][0]),int(car.position[0][1])-(i+1)] in free_list:
+                            movelist.append([car.id,'LEFT',(i+1)])
+                        else:
+                            break
+
+                for i in range(self.size):
+                    if [int(car.position[0][0]),int(car.position[-1][1])+(i+1)] in free_list:
+                        movelist.append([car.id,'RIGHT',(i+1)])
+                    else:
+                        break
+
+
+            elif car.direction == 'VERTICAAL':
+                for i in range(self.size):
+                    if ((int(car.position[0][0])-(i+1)) > -1):
+                        if [(int(car.position[0][0]))-(i+1),int(car.position[0][1])] in free_list:
+                            movelist.append([car.id, 'UP',(i+1)])
+                        else:
+                            break
+
+                for i in range(self.size):
+                    if [(int(car.position[-1][0])+(i+1)),int(car.position[0][1])] in free_list:
+                        movelist.append([car.id, 'DOWN',(i+1)])
+                    else:
+                        break
+        return movelist
