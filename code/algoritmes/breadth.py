@@ -69,6 +69,10 @@ def breadth(size,bord):
                 grid.grid = grid.update()
                 if str(grid.grid) not in explored.keys():
                     gridlist.append(deepcopy(grid.grid))
+                    path = []
+                    path = deepcopy(explored[i])
+                    path.append(deepcopy(x))
+                    explored[str(grid.grid)] = deepcopy(path)
                 movecarback(grid,x)
                 grid.update()
 
@@ -78,7 +82,7 @@ def breadth(size,bord):
             borddict[str(y)] = y
             if not win(grid, size):
                 bool = False
-                print(explored[str(y)])
+                play_2(size,bord,explored[str(y)])
                 break
 
 
