@@ -2,3 +2,5 @@ copy
 random
 tkinter
 time
+matplotlib
+numpy

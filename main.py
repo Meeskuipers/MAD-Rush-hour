@@ -4,7 +4,7 @@ from code.algoritmes.breadth import *
 from code.helper.play import play
 from code.helper.play_2 import play_2
 from code.helper.draw_2 import begin
-from code.helper.compare import compare
+#from code.helper.compare import compare
 
 def main():
     ''' Main is called to start the program, it takes no arguments and will call other functions depending on input.

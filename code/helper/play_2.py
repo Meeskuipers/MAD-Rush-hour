@@ -5,22 +5,25 @@ from random import *
 # from code.helper.draw import draw
 from code.helper.draw_2 import begin
 from code.helper.random_oplossing import list
-from code.algoritmes.dannystra import dannystra
+import copy
 
-def play_2(size,bord):
+def play_2(size,bord,list):
     ''' docstring placeholder '''
     counter = 0
-    print("Heee let's play!!!")
     playgrid = Grid(size,bord)
+    check = copy.deepcopy(playgrid.grid)
     answer = []
     answer.append(playgrid.grid)
-    for i in dannystra(size,bord):
+    for i in list:
         move(playgrid,i)
         playgrid.update()
+        if playgrid.grid == check: #Deel van hill climb algoritme
+            counter = 0
+            answer = []
         answer.append(playgrid.grid)
         counter = counter + 1
-    begin(answer)
     print('it took you ' + str(counter) + ' moves to win')
+    begin(answer)
 
 def move(grid,command):
     ''' docstring placeholder '''
