@@ -59,8 +59,8 @@ def hillclimber(list, size, bord, counter):
     hc_list = solver(list, size, grid, counter)
     answer1 = []
     if counter < len(hc_list)-1:
-        if len(hc_list) > 400:
-            max = 399
+        if len(hc_list) > 200:
+            max = 199
             #deze magicnumber houden de timecomplexity in toom
         else:
             max = len(hc_list)-2
@@ -87,6 +87,18 @@ def solver(list, size, grid, counter):
             return(list)
         move(grid, i)
         grid.update()
+
+        check = []
+
+        for y in grid.grid[2][(grid.grid[2].index(6)+2):]:
+            if y != 0:
+                break
+            check.append(y)
+
+        if len(check) == len(grid.grid[2][(grid.grid[2].index(6)+2):]):
+            print("whoop")
+            return(answer)
+
         answer.append(i)
         if not win(grid, size):
             return(answer)
