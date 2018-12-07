@@ -7,6 +7,7 @@ from code.helper.play import *
 from code.helper.checkwin import win
 from math import ceil
 from code.helper.draw_2 import begin
+from code.helper.play_2 import play_2
 
 def informedbreadth(size,bord):
     print('hoi')
@@ -45,11 +46,13 @@ def informedbreadth(size,bord):
 def breadth(size,bord):
     grid = Grid(size,bord)
     possible_moves = []
+    startgrid = deepcopy(grid.grid)
     counter = 0
     bool = True
     borddict = {}
     borddict[str(grid.grid)] = grid.grid
     explored = {}
+    explored[str(grid.grid)] = []
 
     while bool:
         parentset = ()
@@ -60,11 +63,16 @@ def breadth(size,bord):
             grid.grid = borddict[i]
             grid.updatecars()
             possible_moves = possiblemoves(grid)
-            for x in range(len(possible_moves)):
-                move(grid,[possible_moves[x][0],possible_moves[x][1],possible_moves[x][2]])
+            for x in (possible_moves):
+                path = []
+                path = explored[i]
+                move(grid,x)
                 grid.grid = grid.update()
-                gridlist.append(deepcopy(grid.grid))
-                movecarback(grid,possible_moves[x][0],possible_moves[x][1],possible_moves[x][2])
+                if str(grid.grid) not in explored.keys():
+                    gridlist.append(deepcopy(grid.grid))
+                    path.append(x)
+                    explored[str(grid.grid)] = path
+                movecarback(grid,x)
                 grid.update()
         bordddict = {}
 
@@ -74,7 +82,7 @@ def breadth(size,bord):
             borddict[str(y)] = y
             if not win(grid, size):
                 bool = False
-                begin([y])
+                begin([y],size)
                 break
 
 
@@ -91,15 +99,15 @@ def breadth(size,bord):
 
 
 
-def movecarback(grid,car,direction,times):
-    if direction == 'LEFT':
-        move(grid,[car,'RIGHT',times])
+def movecarback(grid,command):
+    if command[1] == 'LEFT':
+        move(grid,[command[0],'RIGHT',command[2]])
 
-    if str(direction) == 'RIGHT':
-        move(grid,[car,'LEFT',times])
+    if command[1] == 'RIGHT':
+        move(grid,[command[0],'LEFT',command[2]])
 
-    if direction == 'UP':
-        move(grid,[car,'DOWN',times])
+    if command[1] == 'UP':
+        move(grid,[command[0],'DOWN',command[2]])
 
-    if direction == 'DOWN':
-        move(grid,[car,'UP',times])
+    if command[1] == 'DOWN':
+        move(grid,[command[0],'UP',command[2]])

@@ -3,18 +3,18 @@ import time
 from code.classes.class_auto import Auto
 from code.classes.grid import Grid
 
-def begin(answer):
+def begin(answer, size):
     colours = ["#D2691E", "#FF7F50", "#696969", "#DAA520", "#008000", "#4B0082", "#800080", "#008080", "#0033cc", "#ff33cc"]
-    canvas = background()
+    canvas = background(size)
     for grid in answer:
         cars = updatecars(grid)
-        draw(cars, colours, canvas)
+        draw(cars, colours, canvas,size)
     done(canvas)
 
-def background():
-    size = 6
+def background(size):
+    size = size
     width = 2+(95*size)
-    height = 2+(95*6)
+    height = 2+(95*size)
 
     window = tk.Tk()
 
@@ -37,10 +37,10 @@ def updatecars(bord):
         rowcounter += 1
     return cardict
 
-def draw(cars, colours, canvas):
-    canvas.create_rectangle(0,0,95+95*6,95+95*6, outline="black", fill="black")
-    for i in range(6):
-        for x in range(6):
+def draw(cars, colours, canvas,size):
+    canvas.create_rectangle(0,0,95+95*size,95+95*size, outline="black", fill="black")
+    for i in range(size):
+        for x in range(size):
             canvas.create_rectangle(5+(i*95),5+(x*95),95+(i*95),95+(x*95), outline="white", fill="white")
 
     for car in cars:
