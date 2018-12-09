@@ -1,5 +1,6 @@
 from code.classes.class_auto import Auto
 from code.classes.grid import Grid
+from code.helper.checkwin import win
 from types import *
 from random import *
 # from code.helper.draw import draw
@@ -12,7 +13,7 @@ def play(size,bord):
     playgrid = Grid(size,bord)
     answer = []
     answer.append(playgrid.grid)
-    while not playgrid.won():
+    while win(playgrid,size):
         printgrid(playgrid)
         command = input("> ").upper().split(',')
         move(playgrid,command)
@@ -20,7 +21,7 @@ def play(size,bord):
         answer.append(playgrid.grid)
         counter = counter + 1
     printgrid(playgrid)
-    begin(answer)
+    begin(answer,size)
     print('it took you ' + str(counter) + ' moves to win')
 
 def move(grid,command):

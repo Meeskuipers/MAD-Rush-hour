@@ -82,6 +82,7 @@ def breadth(size,bord):
             borddict[str(y)] = y
             if not win(grid, size):
                 bool = False
+                print(explored[str(y)])
                 play_2(size,bord,explored[str(y)])
                 break
 

@@ -18,9 +18,9 @@ def background(size):
     if size == 6:
         exp = 95
     elif size == 9:
-        exp = 85
+        exp = 75
     else:
-        exp = 70
+        exp = 60
     width = 2+(exp*size)
     height = 2+(exp*size)
 
