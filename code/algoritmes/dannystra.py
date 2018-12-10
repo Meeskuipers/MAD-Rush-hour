@@ -5,6 +5,7 @@ from code.helper.play import move
 from code.helper.random_oplossing import list
 from code.helper.checkwin import win
 from code.helper.play_2 import play_2
+from code.helper.draw_2 import begin
 from code.algoritmes.dumbsolver import dumbsolver
 from random import *
 import copy
@@ -88,16 +89,16 @@ def solver(list, size, grid, counter):
         move(grid, i)
         grid.update()
 
-        check = []
-
-        for y in grid.grid[2][(grid.grid[2].index(6)+2):]:
-            if y != 0:
-                break
-            check.append(y)
-
-        if len(check) == len(grid.grid[2][(grid.grid[2].index(6)+2):]):
-            print("whoop")
-            return(answer)
+        # check = []
+        #
+        # for y in grid.grid[2][(grid.grid[2].index(6)+2):]:
+        #     if y != 0:
+        #         break
+        #     check.append(y)
+        #
+        # if len(check) == len(grid.grid[2][(grid.grid[2].index(6)+2):]):
+        #     print("whoop")
+        #     return(answer)
 
         answer.append(i)
         if not win(grid, size):

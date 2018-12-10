@@ -3,6 +3,7 @@ from code.classes.grid import Grid
 from code.helper.possiblemoves import possiblemoves
 from random import *
 from code.helper.play import move
+from code.helper.play_2 import play_2
 from code.helper.checkwin import win
 
 
@@ -19,7 +20,7 @@ def dumbsolver(size,bord):
         answer.append([possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
         grid.update()
         counter += 1
-        if counter == 2000:
+        if counter == 800:
             return dumbsolver(size,bord)
     if counter < 1999:
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
