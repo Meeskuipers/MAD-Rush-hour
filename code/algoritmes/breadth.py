@@ -55,7 +55,6 @@ def breadth(size,bord):
     explored[str(grid.grid)] = []
 
     while bool:
-        parentset = ()
         counter += 1
         print(counter)
         gridlist = []
@@ -83,6 +82,7 @@ def breadth(size,bord):
             if not win(grid, size):
                 bool = False
                 print(explored[str(y)])
+                input('awaiting orders sir')
                 play_2(size,bord,explored[str(y)])
                 break
 
