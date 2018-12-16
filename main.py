@@ -15,8 +15,8 @@ def main():
                 'data/game_7.txt']
     choice = input('type play, dumbsolve or breadth, compare or test' + " ")
     if choice != 'test':
-        gridsize = input('what size would you like your board? (6)')
-        nummer = input('bord 1,2,3,4,5 of 6?')
+        gridsize = input('what size would you like your board?')
+        nummer = input('bord 1,2,3,4,5 or 6?')
         bord = bordlist[int(nummer) - 1]
         if choice == 'play':
             play(int(gridsize), bord)
