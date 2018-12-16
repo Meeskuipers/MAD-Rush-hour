@@ -2,7 +2,9 @@ from code.classes.class_auto import Auto
 
 
 class Grid(object):
-
+    '''Deze class definieert een speelboord van het rush hour spel. Iedere
+       instance van class Grid wordt gebouwd vanuit een size en een specifieke
+       invulling die gedefinieerd wordt vanuit een text file'''
     def __init__(self, size, bord):
         self.load_cars(bord)
         self.size = size
@@ -10,10 +12,14 @@ class Grid(object):
         self.add_cars()
 
     def load_grid(self):
+        ''' Deze functie wordt aangeroepen als een grid aangemaakt wordt
+            en bouwt de initiele structuur van de grid als nested lists'''
         self.grid = [[0] * self.size for i in range(self.size)]
 
     def load_cars(self, filename):
-        ''' docstring placeholder '''
+        ''' Deze functie voegt de autos toe aan de grid nadat load_grid is
+            aangeroepen. Deze functie heeft als argument een filename die
+            ingelezen wordt om de auto posities te bepalen.'''
         with open(filename, "r") as file_cars:
             self.all_cars = []
             for line in file_cars:
@@ -31,6 +37,10 @@ class Grid(object):
                     self.all_cars.append(auto)
 
     def add_cars(self):
+        ''' Deze functie wordt aangeroepen vanuit load_cars om een specifieke
+            auto toe te voegen aan de grid. De auto wordt toegevoegd door een
+            vakje zonder auto (gerepresenteerd door de waarde 0) up te daten
+            met de car ID'''
         for car in self.all_cars:
             for len in car.position:
                 cor_1 = int(len[0])
@@ -39,15 +49,17 @@ class Grid(object):
         # draw(self.all_cars)
 
     def update(self):
+        '''Deze functie wordt aangeroepen vanuit algoritmes om het bord up te
+           daten wanneer auto posities geupdate worden
+
+           Deze functie returned de nieuwe grid nadat deze geupdate is.'''
         self.load_grid()
         self.add_cars()
         return(self.grid)
 
-    def won(self):
-        if self.grid[2][5] == 6:
-            return True
-
     def updatecars(self):
+        '''Deze functie wordt aangeroepen vanuit algoritmes om de instances
+           van alle autos te updaten afhankelijk van de nieuwe grid.'''
         cardict = {}
         rowcounter = 0
         for row in self.grid:
@@ -67,6 +79,12 @@ class Grid(object):
                     car.position = cardict[key]
 
     def calculatemove(self, free_list):
+        '''Deze functie wordt aangeroepen vanuit possiblemoves en heeft een
+           argument: freelist is een lijst met coördinaten in de grid zonder
+           auto op dat coördinaat.
+
+           Calculatemove returned een lijst met commands die gedaan kunnen
+           op het huidige bord afhankelijk van de auto posities.'''
         movelist = []
         for car in self.all_cars:
             if car.direction == 'HORIZONTAAL':

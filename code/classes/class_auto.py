@@ -1,4 +1,6 @@
 class Auto(object):
+    ''' Deze Class definieert de auto's op het rush hour bord. Auto's hebben
+        een ID, een richting, een positie en een type.'''
     def __init__(self, id, direction, position, type):
         self.id = id
         self.direction = direction
@@ -6,6 +8,11 @@ class Auto(object):
         self.type = type
 
     def move_car(self, direction, times):
+        ''' Deze functie heeft twee argumenten: de richting waarin een Auto
+            bewogen moet worden en hoeveel stappen de auto moet maken.
+
+            Deze functie wordt aangeroepen vanuit de move functie om de positie
+            van een specifieke auto to wijzigen.'''
         for i in range(0, int(times)):
 
             if direction == 'LEFT':
