@@ -6,17 +6,18 @@ from code.helper.draw_2 import begin
 from code.helper.random_oplossing import list
 import copy
 
-def play_2(size,bord,list):
+
+def play_2(size, bord, list):
     ''' docstring placeholder '''
     counter = 0
-    playgrid = Grid(size,bord)
+    playgrid = Grid(size, bord)
     check = copy.deepcopy(playgrid.grid)
     answer = []
     answer.append(playgrid.grid)
     for i in list:
-        move(playgrid,i)
+        move(playgrid, i)
         playgrid.update()
-        if playgrid.grid == check: #Deel van hill climb algoritme
+        if playgrid.grid == check:  # Deel van hill climb algoritme
             counter = 0
             answer = []
         answer.append(playgrid.grid)
@@ -24,7 +25,8 @@ def play_2(size,bord,list):
     print('it took you ' + str(counter) + ' moves to win')
     begin(answer, size)
 
-def move(grid,command):
+
+def move(grid, command):
     ''' docstring placeholder '''
     if len(command) != 3:
         print("huh")
@@ -32,7 +34,7 @@ def move(grid,command):
     car = int(command[0])
     direction = command[1]
     times = command[2]
-    grid.all_cars[car-1].move_car(direction,times)
+    grid.all_cars[car-1].move_car(direction, times)
 
 
 def printgrid(grid):

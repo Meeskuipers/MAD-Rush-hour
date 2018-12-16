@@ -3,28 +3,29 @@ from code.classes.grid import Grid
 from code.helper.checkwin import win
 from types import *
 from random import *
-# from code.helper.draw import draw
 from code.helper.draw_2 import begin
 
-def play(size,bord):
+
+def play(size, bord):
     ''' docstring placeholder '''
     counter = 0
     print("Heee let's play!!!")
-    playgrid = Grid(size,bord)
+    playgrid = Grid(size, bord)
     answer = []
     answer.append(playgrid.grid)
-    while win(playgrid,size):
+    while win(playgrid, size):
         printgrid(playgrid)
         command = input("> ").upper().split(',')
-        move(playgrid,command)
+        move(playgrid, command)
         playgrid.update()
         answer.append(playgrid.grid)
         counter = counter + 1
     printgrid(playgrid)
-    begin(answer,size)
+    begin(answer, size)
     print('it took you ' + str(counter) + ' moves to win')
 
-def move(grid,command):
+
+def move(grid, command):
     ''' docstring placeholder '''
     if len(command) != 3:
         print("huh")
@@ -32,7 +33,7 @@ def move(grid,command):
     car = int(command[0])
     direction = command[1]
     times = command[2]
-    grid.all_cars[car-1].move_car(direction,times)
+    grid.all_cars[car-1].move_car(direction, times)
 
 
 def printgrid(grid):
