@@ -7,21 +7,23 @@ from code.helper.play_2 import play_2
 from code.helper.checkwin import win
 
 
-def dumbsolver(size,bord):
+def dumbsolver(size, bord):
     ''' docstring placeholder '''
-    grid = Grid(size,bord)
+    grid = Grid(size, bord)
     counter = 0
     answer = []
-    while win(grid,size):
+    while win(grid, size):
         possible_moves = []
         possible_moves = possiblemoves(grid)
-        randommove = randint(0,len(possible_moves)-1)
-        move(grid,[possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
-        answer.append([possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
+        randommove = randint(0, len(possible_moves)-1)
+        move(grid, [possible_moves[randommove][0],
+            possible_moves[randommove][1], possible_moves[randommove][2]])
+        answer.append([possible_moves[randommove][0],
+            possible_moves[randommove][1], possible_moves[randommove][2]])
         grid.update()
         counter += 1
         if counter == 800:
-            return dumbsolver(size,bord)
+            return dumbsolver(size, bord)
     if counter < 1999:
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
         return answer
