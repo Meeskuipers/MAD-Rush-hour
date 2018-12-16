@@ -60,7 +60,7 @@ def draw(cars, colours, canvas, size, exp):
 
     canvas.update()
     canvas.delete("all")
-    time.sleep(0.5)
+    time.sleep(0.1)
 
 def done(canvas):
     canvas.mainloop()

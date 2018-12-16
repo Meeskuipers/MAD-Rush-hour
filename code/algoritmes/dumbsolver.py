@@ -20,10 +20,11 @@ def dumbsolver(size,bord):
         answer.append([possible_moves[randommove][0],possible_moves[randommove][1],possible_moves[randommove][2]])
         grid.update()
         counter += 1
-        if counter == 800:
+        if counter == 2000:
             return dumbsolver(size,bord)
     if counter < 1999:
         print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+        play_2(size,bord,answer)
         return answer
 
 def show_grid(grid):
