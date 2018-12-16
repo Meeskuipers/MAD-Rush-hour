@@ -2,7 +2,6 @@ from code.classes.class_auto import Auto
 from code.classes.grid import Grid
 from code.helper.possiblemoves import possiblemoves
 from code.helper.play import move
-from code.helper.random_oplossing import list
 from code.helper.checkwin import win
 from code.helper.play_2 import play_2
 from code.helper.draw_2 import begin
