@@ -4,7 +4,6 @@ from code.helper.possiblemoves import possiblemoves
 from code.helper.play import move
 from code.helper.checkwin import win
 from code.helper.play_2 import play_2
-from code.helper.draw_2 import begin
 from code.algoritmes.dumbsolver import dumbsolver
 import copy
 
@@ -28,7 +27,7 @@ def dannystra(size, bord):
         print(len(new_list))
         last_list = copy.deepcopy(new_list)
         new_list = remove_duplicates(
-            hillclimber(new_list, size, bord, counter=0))
+            hillclimber(new_list, size, bord, counter = 0))
     # in play_2 wordt gecheckt of de begingrid opnieuw tegengekomen is
     play_2(size, bord, new_list)
 
