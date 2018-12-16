@@ -17,16 +17,19 @@ def dumbsolver(size, bord):
         possible_moves = possiblemoves(grid)
         randommove = randint(0, len(possible_moves)-1)
         move(grid, [possible_moves[randommove][0],
-            possible_moves[randommove][1], possible_moves[randommove][2]])
+                    possible_moves[randommove][1],
+                    possible_moves[randommove][2]])
         answer.append([possible_moves[randommove][0],
-            possible_moves[randommove][1], possible_moves[randommove][2]])
+                       possible_moves[randommove][1],
+                       possible_moves[randommove][2]])
         grid.update()
         counter += 1
         if counter == 800:
             return dumbsolver(size, bord)
     if counter < 1999:
-        print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+        print("it took " + " " + str(counter) + " " + "moves to win")
         return answer
+
 
 def show_grid(grid):
     for i in grid:
