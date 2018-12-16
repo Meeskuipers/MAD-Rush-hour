@@ -2,23 +2,21 @@ from code.classes.class_auto import Auto
 from code.classes.grid import Grid
 from code.helper.possiblemoves import possiblemoves
 from code.helper.play import move
-from code.helper.random_oplossing import list
 from code.helper.checkwin import win
 from code.helper.play_2 import play_2
-from code.helper.draw_2 import begin
 from code.algoritmes.dumbsolver import dumbsolver
-from random import *
 import copy
 
-#gebruik remove_duplicates als een check voor alles
-def dannystra(size,bord):
+
+def dannystra(size, bord):
     """
     Dit is een versie van een hill climb algoritme.
-    Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing van te maken.
+    Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing
+    van te maken.
     Het heeft nodig als input een grootte en een bordconfiguratie
     Het geeft als output een betere oplossing van dumbsolve
     """
-    grid = Grid(size,bord)
+    grid = Grid(size, bord)
     list1 = dumbsolver(size, bord)
     last_list = remove_duplicates(list1)
     counter = 0
@@ -28,13 +26,14 @@ def dannystra(size,bord):
         print(len(last_list))
         print(len(new_list))
         last_list = copy.deepcopy(new_list)
-        new_list = remove_duplicates(hillclimber(new_list, size, bord, counter = 0))
-
-    #in play wordt gecheckt of de begingrid opnieuw tegengekomen is
+        new_list = remove_duplicates(
+            hillclimber(new_list, size, bord, counter = 0))
+    # in play_2 wordt gecheckt of de begingrid opnieuw tegengekomen is
     play_2(size, bord, new_list)
 
+
 def remove_duplicates(list):
-    newlist = [[0,0,0]]
+    newlist = [[0, 0, 0]]
     for move in list:
         if move[:2] == newlist[-1][:2]:
             newmove = move[:2] + [move[2]+newlist[-1][2]]
@@ -55,6 +54,7 @@ def remove_duplicates(list):
             newlist.append(move)
     return(newlist[1:])
 
+
 def hillclimber(list, size, bord, counter):
     grid = Grid(size, bord)
     hc_list = solver(list, size, grid, counter)
@@ -62,7 +62,9 @@ def hillclimber(list, size, bord, counter):
     if counter < len(hc_list)-1:
         if len(hc_list) > 200:
             max = 199
-            #deze magicnumber houden de timecomplexity in toom
+            # Deze magicnumbers houden de timecomplexity in toom.
+            # Dit betekent echter dat alleen de eerste 200 elementen van de
+            # lijst worden doorzocht.
         else:
             max = len(hc_list)-2
         if counter == max:
@@ -88,18 +90,6 @@ def solver(list, size, grid, counter):
             return(list)
         move(grid, i)
         grid.update()
-
-        # check = []
-        #
-        # for y in grid.grid[2][(grid.grid[2].index(6)+2):]:
-        #     if y != 0:
-        #         break
-        #     check.append(y)
-        #
-        # if len(check) == len(grid.grid[2][(grid.grid[2].index(6)+2):]):
-        #     print("whoop")
-        #     return(answer)
-
         answer.append(i)
         if not win(grid, size):
             return(answer)
