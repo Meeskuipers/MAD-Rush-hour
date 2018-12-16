@@ -21,8 +21,8 @@ class Auto(object):
                                   elem[1]] for elem in self.position]
 
             elif direction == 'DOWN':
-                self.position = [[int(elem[0])+1, e
-                                  lem[1]] for elem in self.position]
+                self.position = [[int(elem[0])+1,
+                                  elem[1]] for elem in self.position]
 
     def __str__(self):
         return f"{self.id}\n{self.position}\n{self.direction}{self.type}\n"
