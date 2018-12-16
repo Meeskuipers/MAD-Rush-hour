@@ -79,8 +79,8 @@ class Grid(object):
                             break
 
                 for i in range(self.size):
-                    if [int(car.position[0][0]),int(car.position[-1][1])+(i+1)]
-                        in free_list:
+                    if [int(car.position[0][0]),
+                        int(car.position[-1][1])+(i+1)] in free_list:
                             movelist.append([car.id,'RIGHT',(i+1)])
                     else:
                         break
