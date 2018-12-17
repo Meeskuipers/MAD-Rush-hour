@@ -25,7 +25,6 @@ def begin(answer, size):
     for grid in answer:
         cars = updatecars(grid)
         draw(cars, colours, canvas, size, exp, rest)
-    done(canvas)
 
 
 def background(size):
@@ -104,7 +103,3 @@ def draw(cars, colours, canvas, size, exp, rest):
     # afgespeeld.
     time.sleep(rest)
     canvas.delete("all")
-
-
-def done(canvas):
-    canvas.mainloop()
