@@ -84,7 +84,10 @@ class Grid(object):
            auto op dat coördinaat.
 
            Calculatemove returned een lijst met commands die gedaan kunnen
-           op het huidige bord afhankelijk van de auto posities.'''
+           op het huidige bord afhankelijk van de auto posities.
+
+           calculatemove returned de mogelijke moves voor een specifieke auto
+           '''
         movelist = []
         for car in self.all_cars:
             if car.direction == 'HORIZONTAAL':

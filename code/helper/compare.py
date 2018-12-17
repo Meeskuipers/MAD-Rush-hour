@@ -15,7 +15,7 @@ def compare(size, bord):
 
        Deze functie wordt aangeroepen vanuit main.py door user input'''
     bool = True
-    breadthscore = breadth(size,bord)
+    breadthscore = breadth(size, bord)
     while bool:
         dumbscore = dumbsolver(size, bord)
         if dumbscore:
