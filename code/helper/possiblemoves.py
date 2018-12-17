@@ -8,7 +8,10 @@ def possiblemoves(grid):
     gridconfiguratie mogelijk zijn.
 
     Dit wordt gedaan aan de hand van alle vrije plekken die bepaald worden in
-    de freelist functie
+    de freelist functie.
+
+    possiblemoves returned een lijst met commandos die uitgevoerd kunnen worden
+    op het specifieke bord.
     """
     movelist = []
     free_list = freelist(grid)
@@ -20,7 +23,9 @@ def freelist(grid):
     """
     Freelist berekent de vrije posities binnen een instance van de class grid.
 
-    Freelist heeft een argument: een istance van de class grid."""
+    Freelist heeft een argument: een istance van de class grid.
+
+    Freelist returned een een lijst met vrije coördinaten"""
     freelist = []
     ycounter = 0
     for row in grid.grid:

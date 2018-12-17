@@ -9,7 +9,10 @@ def win(grid, size):
     grid.
 
     Deze functie wordt aangeroepen vanuit de algoritmes om te checken of de
-    winnende move gemaakt is."""
+    winnende move gemaakt is.
+
+    checkwin returned een boolean om aan te geven of de victory is bereikt.
+    """
     victoryx = ceil(size / 2) - 1
     victoryy = size - 1
     if grid.grid[victoryx][victoryy] == 6:
