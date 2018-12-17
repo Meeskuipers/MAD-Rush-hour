@@ -17,14 +17,13 @@ def main():
                 'data/game_7.txt']
     choice = input('type play, hillclimber, dumbsolve, breadth, compare of test' + " ")
     if choice != 'test':
-        nummer = input('bord 1, 2, 3, 4, 5, 6 of 7?')
-        gridsize = input('welke gridsize?')
-        # if nummer in [1,2,3]:
-        #     gridsize = 6
-        # elif nummer in [4,5,6]:
-        #     gridsize = 9
-        # else:
-        #     gridsize = 12
+        nummer = int(input('bord 1, 2, 3, 4, 5, 6 of 7?'))
+        if nummer <= 3:
+            gridsize = 6
+        elif 4 <= nummer <= 6:
+            gridsize = 9
+        else:
+            gridsize = 12
         bord = bordlist[int(nummer) - 1]
         if choice == 'play':
             play(int(gridsize), bord)
