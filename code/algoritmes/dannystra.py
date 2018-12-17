@@ -13,8 +13,8 @@ def dannystra(size, bord):
     Dit is een versie van een hill climb algoritme.
     Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing
     van te maken.
-    Het heeft nodig als input een grootte en een bordconfiguratie
-    Het geeft als output een betere oplossing van dumbsolve
+    Het heeft nodig als input een grootte en een bordconfiguratie.
+    Het geeft als output een betere oplossing van dumbsolve.
     """
     grid = Grid(size, bord)
     list1 = dumbsolver(size, bord)
