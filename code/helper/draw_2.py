@@ -6,13 +6,15 @@ from code.classes.grid import Grid
 
 def begin(answer, size):
     """
-    Begin is de main functie voor het tekenen van de grid.
+    Begin is de main functie voor het tekenen van de grids. Deze functie heeft
+    twee argumenten: een lijst met de volgorde van alle grids en een integer
+    voor het bepalen van de groote van het boord.
 
-    Tkinter wordt gebruikt als teken methode. Hierbij wordt een grid omgezet
-    naar een overzichtelijke tekening van het boord.
+    Begin visualiseert met behulp van tKinter de borden. Hierbij wordt een grid
+    omgezet naar een overzichtelijke visualisatieselfself.
+
+    Deze functie wordt aangeropen door play_2.
     """
-    colours = ["#D2691E", "#FF7F50", "#696969", "#DAA520", "#008000",
-                    "#4B0082", "#800080", "#008080", "#0033cc", "#ff33cc"]
     if len(answer) < 50:
         rest = 0.5
     elif len(answer) < 150:
@@ -24,13 +26,13 @@ def begin(answer, size):
     exp = back_ground[1]
     for grid in answer:
         cars = updatecars(grid)
-        draw(cars, colours, canvas, size, exp, rest)
+        draw(cars, canvas, size, exp, rest)
 
 
 def background(size):
     """
-    In de background functie wordt de achtergrond van de tekening zwart
-    gemaakt.
+    In de background functie wordt de achtergrond van het geopende zwart
+    tKinter tablat zwart gemaakt.
     """
     size = size
     if size == 6:
@@ -53,6 +55,8 @@ def updatecars(bord):
     """
     In de updatecars functie wordt voor elke grid een dictionary gemaakt.
     Hierbij zijn de keys de car.id en de values de coordinaten van de auto.
+    Deze grid coordinaten zijn nodig voor het bepalen van de coordinaten van
+    het tKinter tablat.
     """
     cardict = {}
     rowcounter = 0
@@ -69,12 +73,26 @@ def updatecars(bord):
     return cardict
 
 
-def draw(cars, colours, canvas, size, exp, rest):
+def draw(cars, canvas, size, exp, rest):
     """
+    De wraw functie zet de coordinaten van de auto's om in coordinaten op het
+    tKinter tablat. Hierbij wordt eerst een lege grid gevisualiseerd, waarnaar
+    elke auto zijn plek op het boord krijgt.
+
+    De functie draw vraag om vijf argumenten:
+        1) De locatie van alle auto's
+        2) Een canvas om op te visualiseren
+        3) De groote van het boord
+        4) De expansie van de vierkantjes (afhankelijk van de size)
+        5) Een int die bepaald hoe snel de grids achter elkaar gespeeld worden.
+
     De draw functie maakt vierkante witte vlakken op het canvas. Dit zijn
     de lege vakjes. Daarna wordt de dictionary gebruikt om elke auto op de
     goede locatie te tekenen.
     """
+    colours = ["#D2691E", "#FF7F50", "#696969", "#DAA520", "#008000",
+                    "#4B0082", "#800080", "#008080", "#0033cc", "#ff33cc"]
+
     canvas.create_rectangle(0, 0,
                             exp + exp * size,
                             exp + exp * size,
