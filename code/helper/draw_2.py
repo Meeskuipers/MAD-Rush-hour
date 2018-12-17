@@ -106,7 +106,7 @@ def draw(cars, canvas, size, exp, rest):
     goede locatie te tekenen.
     """
     colours = ["#D2691E", "#FF7F50", "#696969", "#DAA520", "#008000",
-                    "#4B0082", "#800080", "#008080", "#0033cc", "#ff33cc"]
+               "#4B0082", "#800080", "#008080", "#0033cc", "#ff33cc"]
 
     canvas.create_rectangle(0, 0,
                             exp + exp * size,
