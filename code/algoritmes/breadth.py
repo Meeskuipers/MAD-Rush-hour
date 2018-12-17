@@ -15,16 +15,19 @@ def breadth(size, bord):
         die de bord groote aangeeft en een string die aangeeft welk bord
         opgelost moet worden.
 
-         Breadth  lost het gegeven bord op zoals
-        een breadth first algoritme dat zou doen, maar verkent geen dubbele
-        nodes.
+        Breadth lost het gegeven bord op zoals een breadth first algoritme
+        dat zou doen, maar verkent geen dubbele nodes.
 
         De functie breadth wordt aangeroepen vanuit main.py afhankelijk
         van user input.
 
         Wanneer breadth een antwoord vind wordt er gevraagd om user input
         waarna breadth een functie aanroept die de gedane zetten
-         visualiseert.'''
+        visualiseert.
+
+        breadth returned een lijst met moves tot de winnende node voor de draw
+        en voor de compare functie'''
+
     grid = Grid(size, bord)
     possible_moves = []
     startgrid = deepcopy(grid.grid)
@@ -62,9 +65,9 @@ def breadth(size, bord):
             borddict[str(y)] = y
             if not win(grid, size):
                 bool = False
-                print(explored[str(y)])
                 input('awaiting orders sir')
                 play_2(size, bord, explored[str(y)])
+                return explored[str(y)]
                 break
 
     print('it took' + " " + str(counter) + " " + "moves to win")
