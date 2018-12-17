@@ -7,7 +7,14 @@ from code.helper.draw_2 import begin
 
 
 def play(size, bord):
-    ''' docstring placeholder '''
+    """
+    De play functie zorgt ervoor dat Rush-Hour zelf gespeeld kan worden.
+    Hierbij wordt een command gevraagd (car.id, (RIGHT, LEFT, UP, DOWN),
+    hoeveel plekken).
+
+    Wanneer de rode auto (auto nummer 6) helemaal recht is gekomen wordt het
+    gegeven pad uitgetekent in draw.
+    """
     counter = 0
     print("Heee let's play!!!")
     playgrid = Grid(size, bord)
@@ -26,9 +33,10 @@ def play(size, bord):
 
 
 def move(grid, command):
-    ''' docstring placeholder '''
+    """
+    De move functie update de positie van de auto.
+    """
     if len(command) != 3:
-        print("huh")
         return(False)
     car = int(command[0])
     direction = command[1]
@@ -37,6 +45,10 @@ def move(grid, command):
 
 
 def printgrid(grid):
+    """
+    De printgrid functie zorgt ervoor dat de grid op een goede manier geprint
+    worden.
+    """
     for row in grid.grid:
         for number in row:
             print("", end=" ")

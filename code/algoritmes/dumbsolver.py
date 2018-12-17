@@ -27,15 +27,8 @@ def dumbsolver(size, bord):
 
         if counter == 2000:
             return dumbsolver(size,bord)
-    if counter < 1999:
-        print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
-        play_2(size,bord,answer)
-
-        if counter == 800:
-            return dumbsolver(size, bord)
-    if counter < 1999:
-        print("it took " + " " + str(counter) + " " + "moves to win")
-        return answer
+    print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+    return answer
 
 
 def show_grid(grid):

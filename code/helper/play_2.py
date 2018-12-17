@@ -27,9 +27,6 @@ def play_2(size, bord, list):
 
 def move(grid, command):
     ''' docstring placeholder '''
-    if len(command) != 3:
-        print("huh")
-        return(False)
     car = int(command[0])
     direction = command[1]
     times = command[2]
