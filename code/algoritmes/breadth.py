@@ -11,6 +11,20 @@ from code.helper.play_2 import play_2
 
 
 def breadth(size, bord):
+    ''' De functie breadth vraagt om twee argumenten: een integer
+        die de bord groote aangeeft en een string die aangeeft welk bord
+        opgelost moet worden.
+
+         Breadth  lost het gegeven bord op zoals
+        een breadth first algoritme dat zou doen, maar verkent geen dubbele
+        nodes.
+
+        De functie breadth wordt aangeroepen vanuit main.py afhankelijk
+        van user input.
+
+        Wanneer breadth een antwoord vind wordt er gevraagd om user input
+        waarna breadth een functie aanroept die de gedane zetten
+         visualiseert.'''
     grid = Grid(size, bord)
     possible_moves = []
     startgrid = deepcopy(grid.grid)
@@ -57,6 +71,13 @@ def breadth(size, bord):
 
 
 def movecarback(grid, command):
+    ''' movecarback vraagt om twee argumenten: de grid waar mee gewerkt wordt
+        en het een string van het commando welke auto verplaatst moet worden.
+
+        movecarback verplaatst de auto in de tegenovergestelde riching van het
+        gegeven commando.
+
+        movecarback wordt aangeroepen vanuit breadth '''
     if command[1] == 'LEFT':
         move(grid, [command[0], 'RIGHT', command[2]])
 
