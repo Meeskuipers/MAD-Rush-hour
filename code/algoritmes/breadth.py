@@ -9,6 +9,7 @@ from math import ceil
 from code.helper.draw_2 import begin
 from code.helper.play_2 import play_2
 
+
 def breadth(size, bord):
     ''' De functie breadth vraagt om twee argumenten: een integer
         die de bord groote aangeeft en een string die aangeeft welk bord

@@ -8,7 +8,18 @@ from code.helper.checkwin import win
 
 
 def dumbsolver(size, bord):
-    ''' docstring placeholder '''
+    ''' This function solves the bord by doing constantly doing random moves
+        untill it either finds a solution or did 2000 moves. 2000 moves was
+        chosen as the bound so that answers wouldnt be to long to work with and
+        so that dumbsolver practically always finds an answerself.
+
+        dumbsolver takes two arguments: an integer describing the bordsize and
+        a string representing the bord to work with.
+
+        dumbsolver is called from either main.py to solve the bord or from
+        dannystra to give the hillclimber an initial solutionself.
+
+        dumbsolver returns a list of moves to get to a victory state.'''
     grid = Grid(size, bord)
     counter = 0
     answer = []
@@ -26,15 +37,7 @@ def dumbsolver(size, bord):
         counter += 1
 
         if counter == 2000:
-            return dumbsolver(size,bord)
-    print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+            return dumbsolver(size, bord)
+    print("it took " + " " + str(counter) + " " +
+          " moves to win (for the computer, you're an idiot who chose solve)")
     return answer
-
-
-def show_grid(grid):
-    for i in grid:
-        for x in i:
-            print("  ", end='')
-            print(x, end='')
-        print("")
-    print("")
