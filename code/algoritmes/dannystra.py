@@ -41,6 +41,16 @@ def dannystra(size, bord):
 
 
 def remove_duplicates(list):
+    """
+    De functie remove_duplicates vraagt om een argument: een lijst met move
+    dat tot een antwoord leidt.
+
+    remove_duplicates haalt alle opeenvolgende moves van dezelfde auto uit de
+    lijst. Dit wordt gedaan door twee opeenvolgende moves te vergelijken op
+    dezelfde auto-id en deze moves dan samen te voegen.
+
+    Er wordt dan een nieuwe lijst van moves dat tot een antwoord leidt.
+    """
     newlist = [[0, 0, 0]]
     for move in list:
         if move[:2] == newlist[-1][:2]:
@@ -64,6 +74,21 @@ def remove_duplicates(list):
 
 
 def hillclimber(list, size, bord, counter):
+    """
+    De functie hillclimber vraagt om 4 argumenten: een lijst van moves dat tot
+    een antwoord leidt, de grootte van het bord, een string die aangeeft welk
+    bord opgelost moet worden en een teller.
+
+    Hillclimber swapt twee moves in de lijst met elkaar om en checkt of dit tot
+    een antwoord leidt.
+
+    Echter zoekt deze versie van hillclimber slechts door de eerste 200 moves.
+    Dit is om de tijd in te korten.
+
+    Hillclimber returnt een lijst van dezelfde lengte, maar in een andere
+    volgorde.
+    """
+
     grid = Grid(size, bord)
     hc_list = solver(list, size, grid, counter)
     answer1 = []
@@ -86,6 +111,17 @@ def hillclimber(list, size, bord, counter):
 
 
 def solver(list, size, grid, counter):
+    """
+    De functie solver vraagt om vier argumenten: een lijst van moves dat tot
+    een antwoord leidt, de grootte van het bord, een string die aangeeft welk
+    bord opgelost moet worden en een teller.
+
+    De functie checkt of de gegeven list uit de functie hillclimber
+    leidt tot een oplossing. Zo niet, dan maakt het de omgedraaide moves dat
+    in hillclimber gedaan was ongedaan.
+
+    Het returned deze list afhankelijk van de check (on)aangepast.
+    """
     answer = []
     a = copy.deepcopy(list[counter])
     b = copy.deepcopy(list[counter+1])
