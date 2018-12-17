@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def compare(size, bord):<<<<<<< HEAD
+def compare(size, bord):
     '''Deze functie vergelijkt de scores van het informed breadth first
        algoritme met de dumbsolver en de hillclimber over de dumbsolverself.
 
-       De functie neemt twee argumenten: een gridsize en een bordself.
+       De functie neemt twee argumenten: een gridsize en een bord.
 
        Deze functie wordt aangeroepen vanuit main.py door user input'''
     bool = True

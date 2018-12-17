@@ -18,9 +18,9 @@ def possiblemoves(grid):
 
 def freelist(grid):
     """
-    In de freelist functie worden alle vrije coördinaten bepaald in een gegeven
-    grid.
-    """
+    Freelist berekent de vrije posities binnen een instance van de class grid.
+
+    Freelist heeft een argument: een istance van de class grid."""
     freelist = []
     ycounter = 0
     for row in grid.grid:

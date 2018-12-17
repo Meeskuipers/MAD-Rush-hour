@@ -8,12 +8,13 @@ from code.helper.draw_2 import begin
 
 def play(size, bord):
     """
-    De play functie zorgt ervoor dat Rush-Hour zelf gespeeld kan worden.
-    Hierbij wordt een command gevraagd (car.id, (RIGHT, LEFT, UP, DOWN),
-    hoeveel plekken).
+    Deze functie laat de user zelf een bord oplossen. De user moet typt een
+    commande in de vorm {carID, richting, hoeveelheid stapjes} E.G.: 6,left,2.
 
-    Wanneer de rode auto (auto nummer 6) helemaal recht is gekomen wordt het
-    gegeven pad uitgetekent in draw.
+    Play vraagt om twee argumenten: een integer die de size van het bord
+    beschrijft en een string die aangeeft welk bord opgelost moet worden.
+
+    Play wordt aangeroepen vanuit main.py afhankelijk van user input.
     """
     counter = 0
     print("Heee let's play!!!")
@@ -34,7 +35,12 @@ def play(size, bord):
 
 def move(grid, command):
     """
-    De move functie update de positie van de auto.
+    Deze functie past de positie van een instance van de class auto aanself.
+
+    move heeft twee argumenten: een instance van de class grid en een commando
+    dat uit user input wordt gehaald.
+
+    move wordt aangeroepen door alle algoritmes en door play.
     """
     if len(command) != 3:
         return(False)
@@ -46,8 +52,12 @@ def move(grid, command):
 
 def printgrid(grid):
     """
-    De printgrid functie zorgt ervoor dat de grid op een goede manier geprint
-    worden.
+    De printgrid functie zorgt ervoor dat de grid op een leesbare manier naar
+    de console wordt geprint.
+
+    printgrid heeft maar een argument: een instance van grid om te printen.
+
+    printgrid wordt gecalled vanuit play om de user te kunnen laten spelen.
     """
     for row in grid.grid:
         for number in row:
