@@ -6,7 +6,8 @@ from code.algoritmes.dannystra import dannystra
 import matplotlib.pyplot as plt
 import numpy as np
 
-def compare(size, bord):
+
+def compare(size, bord):<<<<<<< HEAD
     '''Deze functie vergelijkt de scores van het informed breadth first
        algoritme met de dumbsolver en de hillclimber over de dumbsolverself.
 
@@ -16,7 +17,7 @@ def compare(size, bord):
     bool = True
     breadthscore = breadth(size,bord)
     while bool:
-        dumbscore = dumbsolver(size,bord)
+        dumbscore = dumbsolver(size, bord)
         if dumbscore:
             bool = False
     dannyscore = dannystra(size, bord)
@@ -28,6 +29,6 @@ def compare(size, bord):
     algoritmes = ('dumb', 'danny', 'breadth')
     waardes = [len(dumbscore), len(dannyscore), len(breadthscore)]
     y = np.arange(len(algoritmes))
-    plt.bar(y,waardes)
-    plt.xticks(y,algoritmes)
+    plt.bar(y, waardes)
+    plt.xticks(y, algoritmes)
     plt.show()

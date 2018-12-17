@@ -7,7 +7,10 @@ import copy
 
 
 def play_2(size, bord, list):
-    ''' docstring placeholder '''
+    """
+    De play_2 functie wordt gebruikt om van een lijst van moves om te zetten
+    naar een lijst van grids. Deze lijst is nodig voor het tekenen in draw_2.
+    """
     counter = 0
     playgrid = Grid(size, bord)
     check = copy.deepcopy(playgrid.grid)
@@ -26,10 +29,9 @@ def play_2(size, bord, list):
 
 
 def move(grid, command):
-    ''' docstring placeholder '''
-    if len(command) != 3:
-        print("huh")
-        return(False)
+    """
+    De move functie update de positie van de auto.
+    """
     car = int(command[0])
     direction = command[1]
     times = command[2]
@@ -37,6 +39,10 @@ def move(grid, command):
 
 
 def printgrid(grid):
+    """
+    De printgrid functie zorgt ervoor dat de grid op een goede manier geprint
+    worden.
+    """
     for row in grid.grid:
         for number in row:
             print("", end=" ")

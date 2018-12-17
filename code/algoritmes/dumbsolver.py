@@ -8,21 +8,7 @@ from code.helper.checkwin import win
 
 
 def dumbsolver(size, bord):
-    ''' De functie dumbsolver vraagt om twee argumenten: een integer
-        die de bord groote aangeeft en een string die aangeeft welk bord
-        opgelost moet worden.
-
-        dumbsolver lost de borden op door steeds een willekeurige move te doen.
-        Nadat er 800 moves zijn gedaan gaat dumbsolver het opnieuw proberen om
-        zo een degelijke oplossing te vinden. 800 moves is gekozen als bound
-        zodat er bijna altijd een antwoord gevonden wordt, terwijl de uitkomst
-        niet absurd hoog is.
-
-        Dumbsolver wordt aangeroepen vanuit main.py als gevolg van user
-        input
-
-        Dumbsolver returned een lijst met gedane zetten om bij de final state
-        te komen.'''
+    ''' docstring placeholder '''
     grid = Grid(size, bord)
     counter = 0
     answer = []
@@ -38,16 +24,14 @@ def dumbsolver(size, bord):
                        possible_moves[randommove][2]])
         grid.update()
         counter += 1
-        if counter == 800:
-            return dumbsolver(size, bord)
-    if counter < 800:
-        print("it took " + " " + str(counter) + " " + "moves to win")
-        return answer
+
+        if counter == 2000:
+            return dumbsolver(size,bord)
+    print("it took "+ " " +str(counter)+ " " + " moves to win (for the computer, you're an idiot who chose solve)")
+    return answer
 
 
 def show_grid(grid):
-    '''Deze functie heeft als argument een class grid en print deze
-       uit op een manier die voor mensen leesbaar is in de console'''
     for i in grid:
         for x in i:
             print("  ", end='')
