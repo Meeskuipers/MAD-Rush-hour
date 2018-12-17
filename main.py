@@ -4,17 +4,24 @@ from code.algoritmes.breadth import breadth
 from code.helper.play import play
 from code.helper.play_2 import play_2
 from code.helper.draw_2 import begin
+from code.helper.compare import compare
 
 
 def main():
     ''' Main is called to start the program, it takes no arguments and
-        will call other functions depending on input.
+        will call other functions depending on user input.
     '''
     bordlist = ['data/game_1.txt', 'data/game_2.txt', 'data/game_3.txt',
                 'data/game_4.txt', 'data/game_5.txt', 'data/game_6.txt',
                 'data/game_7.txt']
     choice = input('type play, dumbsolve or breadth, compare or test' + " ")
-    if choice != 'test':
+    choice = choice.lower()
+    if choice == 'compare':
+        gridsize = 6
+        bord = 'data/game_2.txt'
+        compare(gridsize, bord)
+
+    elif choice != 'test':
         gridsize = input('what size would you like your board?')
         nummer = input('bord 1,2,3,4,5 or 6?')
         bord = bordlist[int(nummer) - 1]
@@ -28,8 +35,6 @@ def main():
             play_2(int(gridsize), bord)
         elif choice == 'draw':
             begin()
-        elif choice == 'compare':
-            compare(int(gridsize), bord)
         elif choice == 'breadth':
             breadth(int(gridsize), bord)
         else:

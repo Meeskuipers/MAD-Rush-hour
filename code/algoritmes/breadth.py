@@ -9,7 +9,6 @@ from math import ceil
 from code.helper.draw_2 import begin
 from code.helper.play_2 import play_2
 
-
 def breadth(size, bord):
     ''' De functie breadth vraagt om twee argumenten: een integer
         die de bord groote aangeeft en een string die aangeeft welk bord
@@ -62,7 +61,7 @@ def breadth(size, bord):
             borddict[str(y)] = y
             if not win(grid, size):
                 bool = False
-                print(explored[str(y)])
+                return explored[str(y)]
                 input('awaiting orders sir')
                 play_2(size, bord, explored[str(y)])
                 break

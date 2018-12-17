@@ -29,6 +29,7 @@ def dannystra(size, bord):
         new_list = remove_duplicates(
             hillclimber(new_list, size, bord, counter = 0))
     # in play_2 wordt gecheckt of de begingrid opnieuw tegengekomen is
+    return new_list
     play_2(size, bord, new_list)
 
 
