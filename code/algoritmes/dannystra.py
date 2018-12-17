@@ -15,14 +15,15 @@ def dannystra(size, bord):
         die de bord groote aangeeft en een string die aangeeft welk bord
         opgelost moet worden.
 
-        Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing
-        van te maken.
+        Het neemt een oplossing uit dumbsolve en probeert hier een betere
+        oplossing van te maken.
 
         De functie breadth wordt aangeroepen vanuit main.py afhankelijk
         van user input.
 
-        dannystra returned een lijst met moves tot de winnende node een geeft deze
-        door aan de draw functie."""
+        dannystra returned een lijst met moves tot de winnende node een geeft
+        deze door aan de draw functie.
+        """
     grid = Grid(size, bord)
     list1 = dumbsolver(size, bord)
     last_list = remove_duplicates(list1)
@@ -34,7 +35,7 @@ def dannystra(size, bord):
         print(len(new_list))
         last_list = copy.deepcopy(new_list)
         new_list = remove_duplicates(
-            hillclimber(new_list, size, bord, counter = 0))
+            hillclimber(new_list, size, bord, counter=0))
     # in play_2 wordt gecheckt of de begingrid opnieuw tegengekomen is
     return new_list
     play_2(size, bord, new_list)
