@@ -8,8 +8,16 @@ import copy
 
 def play_2(size, bord, list):
     """
+    De fucntie play_2 vraag om drie argumenten:
+        1) Een interger die de groote van het boor aangeeft
+        2) Een string die aangeeft welk boord opgelost moet worden
+        3) Een lijst van moves die een oplossing geven.
     De play_2 functie wordt gebruikt om van een lijst van moves om te zetten
     naar een lijst van grids. Deze lijst is nodig voor het tekenen in draw_2.
+
+    Deze functie wordt aangeroepen door breadth en dannystra. De groote van de
+    list die als argument wordt gegeven hangt af van de oplossing die de
+    algoritmes krijgen.
     """
     counter = 0
     playgrid = Grid(size, bord)
@@ -30,7 +38,13 @@ def play_2(size, bord, list):
 
 def move(grid, command):
     """
-    De move functie update de positie van de auto.
+    De functie move krijgt twee argumenten: een lijst met lijsten waarin de
+    locatie van alle auto's staan en een command die aangeeft welke auto waar
+    heen gaat.
+
+    De functie wordt aangeroepen door play_2.
+
+    De coordinaten van de auto's worden aangepast in de Class auto.
     """
     car = int(command[0])
     direction = command[1]
@@ -40,6 +54,9 @@ def move(grid, command):
 
 def printgrid(grid):
     """
+    De functie printgrid vraag om één argument: een lijst met lijsten waarin
+    intergers staan.
+
     De printgrid functie zorgt ervoor dat de grid op een goede manier geprint
     worden.
     """

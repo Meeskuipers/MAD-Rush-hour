@@ -33,6 +33,14 @@ def background(size):
     """
     In de background functie wordt de achtergrond van het geopende zwart
     tKinter tablat zwart gemaakt.
+
+    De functie vraagt om één argument: een interger die de groote van het boord
+    aangeeft.
+
+    De functie wordt aangeropen door begin.
+
+    De backgrond functie returned een tKinter canvas die in de draw functie
+    wordt gebruikt.
     """
     size = size
     if size == 6:
@@ -57,6 +65,13 @@ def updatecars(bord):
     Hierbij zijn de keys de car.id en de values de coordinaten van de auto.
     Deze grid coordinaten zijn nodig voor het bepalen van de coordinaten van
     het tKinter tablat.
+
+    De functie updatecars vraagt om één argument: een lijst die de locatie
+    van alle auto's bevat.
+
+    De functie wordt aangeroepen door begin. Hierna returned het een dictionary
+    waarin alle coordinaten van de auto's staan. Deze dictionary wordt hierna
+    gebruikt door de draw functie.
     """
     cardict = {}
     rowcounter = 0
