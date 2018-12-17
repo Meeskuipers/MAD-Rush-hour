@@ -18,12 +18,13 @@ def main():
     choice = input('type play, hillclimber, dumbsolve, breadth, compare of test' + " ")
     if choice != 'test':
         nummer = input('bord 1, 2, 3, 4, 5, 6 of 7?')
-        if nummer == 1 or 2 or 3:
-            gridsize = 6
-        elif nummer == 4 or 5 or 6:
-            gridsize = 9
-        else:
-            gridsize = 12
+        gridsize = input('welke gridsize?')
+        # if nummer in [1,2,3]:
+        #     gridsize = 6
+        # elif nummer in [4,5,6]:
+        #     gridsize = 9
+        # else:
+        #     gridsize = 12
         bord = bordlist[int(nummer) - 1]
         if choice == 'play':
             play(int(gridsize), bord)
