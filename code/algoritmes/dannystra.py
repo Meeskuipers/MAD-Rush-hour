@@ -9,13 +9,20 @@ import copy
 
 
 def dannystra(size, bord):
-    """
-    Dit is een versie van een hill climb algoritme.
-    Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing
-    van te maken.
-    Het heeft nodig als input een grootte en een bordconfiguratie.
-    Het geeft als output een betere oplossing van dumbsolve.
-    """
+    """Dit is een versie van een hill climb algoritme.
+
+        De functie dannystra vraagt om twee argumenten: een integer
+        die de bord groote aangeeft en een string die aangeeft welk bord
+        opgelost moet worden.
+
+        Het neemt een oplossing uit dumbsolve en probeert hier een betere oplossing
+        van te maken.
+
+        De functie breadth wordt aangeroepen vanuit main.py afhankelijk
+        van user input.
+
+        dannystra returned een lijst met moves tot de winnende node een geeft deze
+        door aan de draw functie."""
     grid = Grid(size, bord)
     list1 = dumbsolver(size, bord)
     last_list = remove_duplicates(list1)
