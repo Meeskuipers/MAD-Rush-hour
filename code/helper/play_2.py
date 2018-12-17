@@ -3,7 +3,6 @@ from code.classes.grid import Grid
 from types import *
 from random import *
 from code.helper.draw_2 import begin
-from code.helper.random_oplossing import list
 import copy
 
 
